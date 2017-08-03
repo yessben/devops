@@ -1,0 +1,283 @@
+@font-face {
+    font-family: 'SF Light';
+    src: url(./fonts/SF-UI-Text-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'SF';
+    src: url(./fonts/SF-UI-Text-Regular.otf) format('opentype');
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    font-family: 'SF Light';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+button{
+    font-family: 'SF Light';
+}
+input{
+    font-family: 'SF Light';
+}
+
+main.background-dark{
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#414141+0,191919+100 */
+    background: #414141; /* Old browsers */
+    background: -moz-linear-gradient(top,  #414141 0%, #191919 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #414141 0%,#191919 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #414141 0%,#191919 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414141', endColorstr='#191919',GradientType=0 ); /* IE6-9 */
+}
+main.background-dark-logo{
+    height: calc(100vh);
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#414141+0,191919+100 */
+    background: #414141; /* Old browsers */
+    background: -moz-linear-gradient(top,  #414141 0%, #191919 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #414141 0%,#191919 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #414141 0%,#191919 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414141', endColorstr='#191919',GradientType=0 ); /* IE6-9 */
+    position: relative;
+}
+
+main.background-dark-logo::after { 
+    content: " ";
+    height: 37px;
+    width: 37px;
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background-image: url(../../../assets/img/att_globe_rgb_wht.svg);
+}
+
+main > .content-footer{
+    height: calc(100vh - 170px);
+    overflow: auto;
+}
+button.button-dark{
+    height: 50px;
+    width: max-width:500px;
+    position: fixed;
+    bottom: 10px;
+    left: 5%;
+    right: 5%;
+    display: block;
+    width: 90%;
+    border-radius: 0;
+    background-color: transparent;
+    border: 1px solid #1ba0d9;
+    font-size: 21px;
+    color: rgb(255,255,255);
+    letter-spacing: 3px;
+    outline: none;
+}
+button.button-blue{
+    height: 50px;
+    width: max-width:500px;
+    bottom: 10px;
+    left: 5%;
+    right: 5%;
+    display: block;
+    width: 90%;
+    border-radius: 0;
+    background-color: transparent;
+    border: 1px solid rgb(26,160,217);
+    font-size: 21px;
+    color: rgb(26,160,217);
+    letter-spacing: 3px;
+    position: absolute;
+    outline: none;
+}
+.textbox{
+    width: 90%;
+    height: 50px;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    border-bottom: 1px solid rgb(200,200,200);
+    position: relative;
+}
+
+.textbox.textbox-dark{
+    border-bottom: 1px solid rgb(255,255,255);
+}
+.textbox.textbox-dark label{
+    color: rgb(200,200,200);
+    display: block;
+    font-weight: normal;
+}
+.textbox.textbox-dark.home{
+    top:50%;
+    margin-top: -50px;
+    position: absolute;
+}
+
+
+
+
+
+/*Satisfaccion*/
+ul.satisfaccion-group{
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+ul.satisfaccion-group li{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+}
+ul.satisfaccion-group li div{
+    background-color: rgba(117,198,231,.1);
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+ul.satisfaccion-group i{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-repeat: no-repeat;
+    margin-top: 15px;
+}
+ul.satisfaccion-group span{
+    text-align: center;
+    display: block;
+    font-size: 19px;
+}
+ul.satisfaccion-group li:nth-of-type(1){
+    left: 10%;
+    top: 20px;
+}
+ul.satisfaccion-group li:nth-of-type(2){
+    right: 10%;
+    top: 20px;
+}
+ul.satisfaccion-group li:nth-of-type(3){
+    right: 50%;
+    top: 140px;
+    margin-right: -60px;
+}
+ul.satisfaccion-group li:nth-of-type(4){
+    left: 10%;
+    top: 260px;
+}
+ul.satisfaccion-group li:nth-of-type(5){
+    right: 10%;
+    top: 260px;
+}
+ul.satisfaccion-group li.muybien i{
+    background-image: url(img/ico.muybien.blue.svg);
+}
+ul.satisfaccion-group li.bien i{
+    background-image: url(img/ico.bien.blue.svg);
+}
+ul.satisfaccion-group li.indistinto i{
+    background-image: url(img/ico.indistinto.blue.svg);
+}
+ul.satisfaccion-group li.mal i{
+    background-image: url(img/ico.mal.blue.svg);
+}
+ul.satisfaccion-group li.muymal i{
+    background-image: url(img/ico.muymal.blue.svg);
+}
+
+/*Categorias*/
+ul.categorias-group{
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+ul.categorias-group li{
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+}
+ul.categorias-group i{
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 11px;
+    border:1px solid rgb(27,160,217);
+    position: absolute;
+    background-color: transparent;
+}
+
+ul.categorias-group li.selected i{
+    background-color: rgb(27,160,217);
+}
+ul.categorias-group span{
+    display: block;
+    margin-left: 25px;
+}
+
+
+
+.center-middle{
+    color: rgb(255,255,255);
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    height: 100px;
+    top:50%;
+    margin-top: -100px;
+    text-align: center;
+    position: absolute;
+    font-size: 31px;
+}
+
+header > .back {
+    width: 32px;
+    height: 50px;
+    position: absolute;
+    background-image: url(img/back.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40%;
+}
+
+h1.titulo-encuesta{
+    font-weight: normal;
+    color: rgb(74,74,74);
+    margin: 30px auto;
+}
+h4.content-encuesta{
+    font-weight: normal;
+    color: rgb(74,74,74);
+    margin: 30px auto;
+}
+
+label.titulo-pregunta{
+    font-weight: normal;
+    font-size: 19px;
+}
+
+
+.animation-left{
+    margin-left: -100%;
+    margin-right: 100%;
+    transition: .3s;
+}
+
+span.count{
+    float: right;
+    margin-right: 20px;
+}
