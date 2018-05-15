@@ -5,7 +5,7 @@
 
         $scope.calificacion = $internal.calificacion;
         $scope.tipo = $internal.encuesta.tipoEncuesta.id;
-        $scope.nombre = $internal.encuesta.nombre;
+        $scope.nombre = $internal.responderEncuesta.nombre;
         
 
     	$scope.terminar = function(){
