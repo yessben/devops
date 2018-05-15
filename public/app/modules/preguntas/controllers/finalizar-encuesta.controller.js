@@ -1,7 +1,7 @@
 /* global angular*/
 (function () {
 
-    var Controller = function ($scope, $window) {
+    var Controller = function ($scope, $window, $internal) {
 
         $scope.calificacion = $internal.calificacion;
         $scope.tipo = $internal.encuesta.tipoEncuesta.id;
@@ -13,7 +13,7 @@
 
     };
 
-    Controller.$inject = ['$scope', '$window'];
+    Controller.$inject = ['$scope', '$window', '$internal'];
 
     angular
         .module('preguntas')
