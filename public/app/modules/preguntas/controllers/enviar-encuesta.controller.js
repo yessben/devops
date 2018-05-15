@@ -19,9 +19,15 @@
             respuesta.nombre = $internal.responderEncuesta.nombre;
             
             respuesta.$save().then(function (data) {
-                socket.emit('event-responder-encuesta', { id: $internal.responderEncuesta.idEncuesta });
-                $rootScope.spin = false;
-                $window.location = '#/finalizar-encuesta/';
+                
+                if(data.success){
+                    socket.emit('event-responder-encuesta', { id: $internal.responderEncuesta.idEncuesta });
+                    $rootScope.spin = false;
+                    $window.location = '#/finalizar-encuesta/';
+                }else{
+                    $rootScope.alert = true;
+                    $rootScope.mensajeAlerta = data.msjError;
+                }
             }, function (e) {
                 $rootScope.spin = false;
                 console.log(e);
