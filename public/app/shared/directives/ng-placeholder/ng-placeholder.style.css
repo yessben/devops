@@ -1,24 +1,30 @@
 .textbox{
     text-align: left;
+    position: relative;
+    height: 50px;
+    border-bottom: 1px solid rgb(26,160,217);
+}
+.textbox.no-border{
+    border-bottom:none;
 }
 .textbox input{
     width: 100%;
     outline: none;
     border: 0;
     background-color: transparent;
-    font-size: 22px;
+    font-size: 20px;
     position: absolute;
     z-index: 2;
     top:0;
     left: 0;
     right: 0;
     bottom: 0;
-    color: rgb(255,255,255);
+    color: rgb(0,0,0);
     text-align: center;
 }
 .textbox label{
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -28,12 +34,15 @@
     bottom: 0;
     text-align: center;
     transition: .2s;
+    font-weight: normal;
+    color: rgb(155,155,155);
 }
 .textbox label.focused{
     text-align: left;
     font-size: 14px;
     top: 15px;
     transition: .2s;
+    color: rgb(155,155,155);
 }
 
 .textbox > i{

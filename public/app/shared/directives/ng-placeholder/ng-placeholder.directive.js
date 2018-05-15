@@ -3,18 +3,28 @@
 (function () {
     var Directive = function () {
         var Link = function ($scope, $element, attr, ngModelControler) {
-            $scope.$label = angular.element($element.children('label')[0]);
-            $scope.$input = angular.element($element.children('input')[1]);
-            $scope.$clear = angular.element($element.children('i')[2]);
+            $scope.$label = angular.element($element.children()[0]);
+            $scope.$input = angular.element($element.children()[1]);
+            $scope.$clear = angular.element($element.children()[2]);
+            $scope.model = "";
+
+            ngModelControler.$render = function(){
+                $scope.model = ngModelControler.$viewValue;
+                if($scope.model === '' || $scope.model === undefined ){
+                    $scope.$clear.addClass('ng-hide');
+                }else{
+                    $scope.$clear.removeClass('ng-hide');
+                    $scope.inputFocus();
+                }
+            };
             
-            $scope.$clear.addClass('ng-hide');
 
             $scope.inputFocus = function () {
                 $scope.$label.addClass('focused');
             };
 
             $scope.inputBlur = function () {
-                $scope.model = $element.children()[1].value;
+                // $scope.model = $element.children()[1].value;
                 if ($scope.model === '' || $scope.model === undefined) {
                     $scope.$label.removeClass('focused');
                 } else {
@@ -22,7 +32,7 @@
                 }
             };
             $scope.inputKeyup = function(){
-                $scope.model = $element.children()[1].value;
+                // $scope.model = $element.children()[1].value;
                 if($scope.model === '' || $scope.model === undefined){
                     $scope.$clear.addClass('ng-hide');
                 }else{
@@ -46,7 +56,8 @@
         return {
             restrict: 'A',
             require:'?ngModel',
-            link: Link
+            link: Link,
+            scope:{}
         };
     };
     angular

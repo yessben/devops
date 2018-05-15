@@ -15,6 +15,8 @@
             
             respuesta.idEncuesta = $internal.responderEncuesta.idEncuesta;
             respuesta.preguntas = $internal.responderEncuesta.preguntas;
+            respuesta.attuid = $internal.responderEncuesta.attuid;
+            respuesta.nombre = $internal.responderEncuesta.nombre;
             
             respuesta.$save().then(function (data) {
                 socket.emit('event-responder-encuesta', { id: $internal.responderEncuesta.idEncuesta });

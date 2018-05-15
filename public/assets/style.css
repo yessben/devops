@@ -101,7 +101,7 @@ button.button-blue{
     position: absolute;
     outline: none;
 }
-.textbox{
+/* .textbox{
     width: 90%;
     height: 50px;
     position: absolute;
@@ -109,7 +109,7 @@ button.button-blue{
     right: 5%;
     border-bottom: 1px solid rgb(200,200,200);
     position: relative;
-}
+} */
 
 .textbox.textbox-dark{
     border-bottom: 1px solid rgb(255,255,255);
@@ -123,6 +123,11 @@ button.button-blue{
     top:50%;
     margin-top: -50px;
     position: absolute;
+    width: 100%;
+}
+
+.textbox.textbox-dark.home input{
+    color: rgb(255,255,255);
 }
 
 

@@ -44,9 +44,17 @@
         $scope.contestar = function () {
 
 
+            for(var i in $scope.encuesta.preguntas){
+                lista = $scope.encuesta.preguntas[i].respuestas;
+                $scope.encuesta.preguntas[i].respuestas = lista.sort(function() {return Math.random() - 0.5});
+            }
+
+
             $internal.responderEncuesta = {
                 idEncuesta: $routeParams.id,
-                preguntas: $scope.encuesta.preguntas
+                preguntas: $scope.encuesta.preguntas,
+                attuid: $scope.encuesta.attuid,
+                nombre: $scope.encuesta.nombre
             };
             $internal.responderEncuesta.respuesta = {};
             $internal.index = 0;
@@ -54,7 +62,25 @@
 
                 $window.location = '#/responder-satisfaccion/';
             } else {
-                $window.location = '#/responder-categoria/';
+                if($scope.encuesta.tipoEncuesta.id == 3){
+                    console.log($scope.encuesta.attuid);
+                    console.log($scope.encuesta.nombre);
+                    
+                    if($scope.encuesta.attuid  && $scope.encuesta.nombre){
+                        if( $scope.encuesta.attuid.length === 6){
+                            $window.location = '#/responder-categoria/';
+                        }else{
+                            $rootScope.alert = true;
+                            $rootScope.mensajeAlerta = "EL ATTUID es incorrecto";
+                        }
+                    }else{
+                        $rootScope.alert = true;
+                        $rootScope.mensajeAlerta = "Debes llenar todos los campos.";
+                    }
+                }else{
+
+                    $window.location = '#/responder-categoria/';
+                }
             }
         };
 

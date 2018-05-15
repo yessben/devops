@@ -4,37 +4,29 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: white;
-    color: #ff9200;
+    background: #252525;
+    color: white;
     text-align: center;
+    z-index: 100;
 }
 
 .alert > .alert-text {
-    width: 300px;
-    margin: 50px auto 50px auto;
-    color: cadetblue;
-    font-size: 20px;
+    width: 80%;
+    margin: 250px auto 50px auto;
+    color: white;
+    font-size: 24px;
 }
 
 .alert > .alert-button {
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid #ff9200;
-    width: 80%;
-    margin: 20px auto;
-    border-radius: 10px;
-    background-color: white;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #3AACDE;
+    width: 90%;
     cursor: pointer;
-}
-
-.alert > .alert-button:hover {
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid #ff9200;
-    width: 80%;
-    margin: 20px auto;
-    border-radius: 10px;
-    background-color: #ff9200;
-    cursor: pointer;
-    color: white;
+    position: fixed;
+    bottom: 10px;
+    left: 5%;
+    letter-spacing: 3px;
+    font-size: 20px;
+    /* font-family: 'Omnes W'; */
 }
