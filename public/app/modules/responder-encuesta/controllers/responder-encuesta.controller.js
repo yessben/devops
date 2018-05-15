@@ -14,12 +14,13 @@
                     id_encuesta: $scope.encuestaId
                 }, function (data) {
                     $rootScope.spin = false;
-                    $scope.encuesta = data;
-                    console.log($internal.encuesta);
-                    if (data.id !== undefined) {
+                    $scope.encuesta = data.data;
+                    if (data.success) {
                         $scope.init();
                     } else {
-                        $window.location = '#/inicio-alert/' + $scope.encuestaId;
+                        // $window.location = '#/inicio-alert/' + $scope.encuestaId;
+                        $rootScope.alert = true;
+                        $rootScope.mensajeAlerta = data.msjError;
                     }
                 }, function (e) {
                     $rootScope.spin = false;
