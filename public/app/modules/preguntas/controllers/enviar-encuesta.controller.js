@@ -19,10 +19,10 @@
             respuesta.nombre = $internal.responderEncuesta.nombre;
             
             respuesta.$save().then(function (data) {
-                
+                $rootScope.spin = false;
                 if(data.success){
+                    $internal.calificacion = data.calificacion;
                     socket.emit('event-responder-encuesta', { id: $internal.responderEncuesta.idEncuesta });
-                    $rootScope.spin = false;
                     $window.location = '#/finalizar-encuesta/';
                 }else{
                     $rootScope.alert = true;

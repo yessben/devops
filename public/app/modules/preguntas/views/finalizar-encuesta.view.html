@@ -1,8 +1,12 @@
 <main class="background-dark">
     <div class="content-footer">
-        <div class="center-middle">
+        <div class="center-middle" ng-show="tipo !== 3">
             <p>¡Gracias!</p>
             <p>Se han registrado tus respuestas</p>
+        </div>
+        <div class="center-middle"  ng-show="tipo === 3">
+            <p>¡Gracias!</p>
+            <p>Tu calificacion es {{calificacion}}</p>
         </div>
         <button type="button" class="button-dark" ng-click="terminar()">TERMINAR</button>
     </div>

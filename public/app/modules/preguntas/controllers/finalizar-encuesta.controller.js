@@ -3,6 +3,10 @@
 
     var Controller = function ($scope, $window) {
 
+        $scope.calificacion = $internal.calificacion;
+        $scope.tipo = $internal.encuesta.tipoEncuesta.id;
+        
+
     	$scope.terminar = function(){
     		$window.location = "#/";
     	};
