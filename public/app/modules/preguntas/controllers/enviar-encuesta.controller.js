@@ -21,7 +21,7 @@
             respuesta.$save().then(function (data) {
                 $rootScope.spin = false;
                 if(data.success){
-                    $internal.calificacion = data.calificacion;
+                    $internal.calificacion = data.data.calificacion;
                     socket.emit('event-responder-encuesta', { id: $internal.responderEncuesta.idEncuesta });
                     $window.location = '#/finalizar-encuesta/';
                 }else{
