@@ -70,6 +70,12 @@
             controller: 'DetalleEncuestaController'
         });
 
+        // Detalle
+        $routeProvider.when('/glo', {
+            templateUrl: baseUrl + 'responder-encuesta/views/glo.view.html',
+            controller: 'GloController'
+        });
+
     };
 
     Router.$inject = ['$routeProvider'];

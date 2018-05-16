@@ -29,6 +29,10 @@
                 }else{
                     $rootScope.alert = true;
                     $rootScope.mensajeAlerta = data.msjError;
+                    
+                    setTimeout(function(){
+                        $window.location = '#/';
+                    },50000);
                 }
             }, function (e) {
                 $rootScope.spin = false;

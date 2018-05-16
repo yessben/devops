@@ -45,9 +45,11 @@
         $scope.contestar = function () {
 
 
-            for(var i in $scope.encuesta.preguntas){
-                lista = $scope.encuesta.preguntas[i].respuestas;
-                $scope.encuesta.preguntas[i].respuestas = lista.sort(function() {return Math.random() - 0.5});
+            if($scope.encuesta.tipoEncuesta.id === 3){
+                for(var i in $scope.encuesta.preguntas){
+                    lista = $scope.encuesta.preguntas[i].respuestas;
+                    $scope.encuesta.preguntas[i].respuestas = lista.sort(function() {return Math.random() - 0.5});
+                }
             }
 
 
@@ -64,8 +66,6 @@
                 $window.location = '#/responder-satisfaccion/';
             } else {
                 if($scope.encuesta.tipoEncuesta.id == 3){
-                    console.log($scope.encuesta.attuid);
-                    console.log($scope.encuesta.nombre);
                     
                     if($scope.encuesta.attuid  && $scope.encuesta.nombre){
                         if( $scope.encuesta.attuid.length === 6){
