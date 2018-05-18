@@ -29,12 +29,13 @@
                     socket.emit('event-responder-encuesta', { id: $internal.responderEncuesta.idEncuesta });
                     $window.location = '#/finalizar-encuesta/';
                 }else{
-                    $rootScope.alert = true;
-                    $rootScope.mensajeAlerta = data.msjError;
                     
-                    setTimeout(function(){
-                        $window.location = '#/';
-                    },50000);
+                    $internal.nombre = $internal.responderEncuesta.nombre;
+                    $internal.attuid = $internal.responderEncuesta.attuid;                   
+                    $internal.msj = data.msjError;
+                    
+                    
+                    $window.location = '#/error/';
                 }
             }, function (e) {
                 $rootScope.spin = false;

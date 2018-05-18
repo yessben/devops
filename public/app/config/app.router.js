@@ -76,6 +76,11 @@
             controller: 'GloController'
         });
 
+        $routeProvider.when('/error', {
+            templateUrl: baseUrl + 'responder-encuesta/views/error.view.html',
+            controller: 'ErrorController'
+        });
+
     };
 
     Router.$inject = ['$routeProvider'];
