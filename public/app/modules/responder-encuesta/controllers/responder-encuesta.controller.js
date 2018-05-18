@@ -46,8 +46,12 @@
 
 
             if($scope.encuesta.tipoEncuesta.id === 3){
+
+                preguntas = $scope.encuesta.preguntas;
+                $scope.encuesta.preguntas = preguntas.sort(function() {return Math.random() - 0.5});
+
                 for(var i in $scope.encuesta.preguntas){
-                    lista = $scope.encuesta.preguntas[i].respuestas;
+                    var lista = $scope.encuesta.preguntas[i].respuestas;
                     $scope.encuesta.preguntas[i].respuestas = lista.sort(function() {return Math.random() - 0.5});
                 }
             }
