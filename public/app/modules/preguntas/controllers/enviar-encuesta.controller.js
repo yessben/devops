@@ -4,7 +4,7 @@
     var Controller = function ($scope, $rootScope, $window, $internal, $responderEncuesta) {
         
         // Obtenemos el array Normal de preguntas
-        $scope.encuesta = $internal.responderEncuesta;
+        //$scope.encuesta = $internal.responderEncuesta;
         var socket = io.connect('https://ancient-journey-62555.herokuapp.com/');// SOcket.io
         
 
