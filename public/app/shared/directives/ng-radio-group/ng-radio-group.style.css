@@ -32,7 +32,7 @@ ng-radio-group ul li i.outer{
 ng-radio-group ul li i.inner{
 	position: absolute;
 	left: 3px;
-	top: 8px;
+	top: 10px;
 	display: block;
 	width: 16px;
 	height: 16px;

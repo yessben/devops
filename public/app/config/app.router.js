@@ -77,7 +77,7 @@
         });
 
         $routeProvider.when('/error', {
-            templateUrl: baseUrl + 'responder-encuesta/views/error.view.html',
+            templateUrl: baseUrl + 'preguntas/views/error.view.html',
             controller: 'ErrorController'
         });
 

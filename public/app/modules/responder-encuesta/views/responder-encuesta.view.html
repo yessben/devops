@@ -15,9 +15,18 @@
                 <div class="form-group">
                     <h4 class="content-encuesta">Dirección: {{encuesta.direccion.name}}</h4>
                 </div>
-                <div class="form-group">
-                    <h4 class="content-encuesta">Vigencia: {{encuesta.date | date:'dd/MMM'}} - {{encuesta.valides | date:'dd/MMM'}}</h4>
+
+                <div class="form-group" ng-hide="encuesta.vigenciaInicio">
+                    <h4 class="content-encuesta">Vigencia de: {{encuesta.date | date:'dd-MMM-yyyy h:mm a'}}</h4>
                 </div>
+
+                <div class="form-group" ng-show="encuesta.vigenciaInicio">
+                    <h4 class="content-encuesta">Vigencia de: {{encuesta.vigenciaInicio | date:'dd-MMM-yyyy h:mm a'}}</h4>
+                </div>
+                <div class="form-group">
+                    <h4 class="content-encuesta">Vigencia hasta: {{encuesta.valides | date:'dd-MMM-yyyy h:mm a'}}</h4>
+                </div>
+                
                 <div class="form-group">
                     <h4 class="content-encuesta">Duración: {{encuesta.tiempo / 60}} Minutos</h4>
                 </div>

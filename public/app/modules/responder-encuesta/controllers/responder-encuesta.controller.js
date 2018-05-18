@@ -19,8 +19,12 @@
                         $scope.init();
                     } else {
                         // $window.location = '#/inicio-alert/' + $scope.encuestaId;
-                        $rootScope.alert = true;
-                        $rootScope.mensajeAlerta = data.msjError;
+
+                        $internal.nombre = "Oh";                 
+                        $internal.msj = data.msjError;
+                        
+                        
+                        $window.location = '#/error/';
                     }
                 }, function (e) {
                     $rootScope.spin = false;
