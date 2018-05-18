@@ -15,6 +15,7 @@
                 }, function (data) {
                     $rootScope.spin = false;
                     $scope.encuesta = data.data;
+                    $internal.encuesta = data.data;
                     if (data.success) {
                         $scope.init();
                     } else {
