@@ -69,7 +69,7 @@ main > .content-footer{
 }
 button.button-dark{
     height: 50px;
-    width: max-width:500px;
+    max-width:500px;
     position: fixed;
     bottom: 10px;
     left: 5%;
@@ -86,7 +86,7 @@ button.button-dark{
 }
 button.button-blue{
     height: 50px;
-    width: max-width:500px;
+    max-width:500px;
     bottom: 10px;
     left: 5%;
     right: 5%;
@@ -100,6 +100,7 @@ button.button-blue{
     letter-spacing: 3px;
     position: absolute;
     outline: none;
+    z-index: 3;
 }
 /* .textbox{
     width: 90%;
