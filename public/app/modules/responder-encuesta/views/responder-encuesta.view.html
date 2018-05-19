@@ -10,25 +10,25 @@
                     <h4 class="content-encuesta">{{encuesta.descripcion}}</h4>
                 </div>
                 <div class="form-group">
-                    <h4 class="content-encuesta">Autor: {{encuesta.autor}}</h4>
+                    <h4 class="content-encuesta">Autor: <b>{{encuesta.autor}}</b></h4>
                 </div>
                 <div class="form-group">
-                    <h4 class="content-encuesta">Dirección: {{encuesta.direccion.name}}</h4>
+                    <h4 class="content-encuesta">Dirección: <b>{{encuesta.direccion.name}}</b></h4>
                 </div>
 
                 <div class="form-group" ng-hide="encuesta.vigenciaInicio">
-                    <h4 class="content-encuesta">Vigencia de: {{encuesta.date | date:'dd-MMM-yyyy h:mm a'}}</h4>
+                    <h4 class="content-encuesta">Vigencia de: <b>{{encuesta.date | date:'dd-MMM-yyyy h:mm a'}}</b></h4>
                 </div>
 
                 <div class="form-group" ng-show="encuesta.vigenciaInicio">
-                    <h4 class="content-encuesta">Vigencia de: {{encuesta.vigenciaInicio | date:'dd-MMM-yyyy h:mm a'}}</h4>
+                    <h4 class="content-encuesta">Vigencia de: <b>{{encuesta.vigenciaInicio | date:'dd-MMM-yyyy h:mm a'}}</b></h4>
                 </div>
                 <div class="form-group">
-                    <h4 class="content-encuesta">Vigencia hasta: {{encuesta.valides | date:'dd-MMM-yyyy h:mm a'}}</h4>
+                    <h4 class="content-encuesta">Vigencia hasta: <b>{{encuesta.valides | date:'dd-MMM-yyyy h:mm a'}}</b></h4>
                 </div>
                 
                 <div class="form-group">
-                    <h4 class="content-encuesta">Duración: {{encuesta.tiempo / 60}} Minutos</h4>
+                    <h4 class="content-encuesta">Duración: <b>{{encuesta.tiempo / 60}}</b> Minutos</h4>
                 </div>
 
                 <span ng-show="encuesta.tipoEncuesta.id === 3">

@@ -263,12 +263,12 @@ header > .back {
 h1.titulo-encuesta{
     font-weight: normal;
     color: rgb(74,74,74);
-    margin: 30px auto;
+    margin: 10px auto;
 }
 h4.content-encuesta{
     font-weight: normal;
     color: rgb(74,74,74);
-    margin: 15px auto;
+    margin: 5px auto;
 }
 
 label.titulo-pregunta{
@@ -286,4 +286,8 @@ label.titulo-pregunta{
 span.count{
     float: right;
     margin-right: 20px;
+}
+
+.form-group{
+    margin-bottom: 5px!important;
 }

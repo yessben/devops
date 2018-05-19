@@ -4,10 +4,18 @@
     var Controller = function ($scope, $rootScope, $routeParams, $window, $internal) {
 
         // Obtenemos el array Normal de preguntas
-        $scope.pregunta = $internal.responderEncuesta.preguntas[0];
-        $scope.animationLeft = false;
-        $scope.total = $internal.responderEncuesta.preguntas.length;
-        $scope.index = $internal.index;
+
+        $scope.encuestaId = $routeParams.id;
+        $scope.encuesta = $internal.encuesta;
+        if(!$internal.encuesta.id){
+            $window.location = '#/responder-encuesta/' + $scope.encuestaId;
+        }else{
+            $scope.pregunta = $internal.responderEncuesta.preguntas[0];
+            $scope.animationLeft = false;
+            $scope.total = $internal.responderEncuesta.preguntas.length;
+            $scope.index = $internal.index;
+        }
+        
          $scope.siguiente = function(respuesta){
 
             setTimeout(function(){

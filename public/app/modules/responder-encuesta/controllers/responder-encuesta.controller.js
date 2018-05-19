@@ -1,7 +1,7 @@
 /* global angular*/
 (function () {
 
-    var Controller = function ($scope, $rootScope, $window, $internal, $encuestas, $routeParams) {
+    var Controller = function ($scope, $rootScope, $window, $internal, $encuestas, $routeParams, $attuidValid) {
         
         $scope.encuestaId = $routeParams.id;
         //$scope.encuesta = $internal.encuesta;
@@ -47,6 +47,28 @@
          }
         };
 
+        $scope.validATTUID = function(fn){
+
+            $rootScope.spin = true;
+            var attuidValid = new $attuidValid();
+            attuidValid.idEncuesta = $scope.encuestaId;
+            attuidValid.attuid = $scope.encuesta.attuid.toUpperCase();
+
+            attuidValid.$save().then(function (data) {
+                $rootScope.spin = false;
+                if(data.success){
+                    fn();
+                }else{
+                    $rootScope.alert = true;
+                    $rootScope.mensajeAlerta = data.msjError;
+                }
+                id_encuesta: $scope.encuestaId
+            }, function(){
+                $rootScope.spin = false;
+                console.log(e);
+            });
+        };
+
         $scope.contestar = function () {
 
 
@@ -78,7 +100,12 @@
                     
                     if($scope.encuesta.attuid  && $scope.encuesta.nombre){
                         if( $scope.encuesta.attuid.length === 6){
-                            $window.location = '#/responder-categoria/';
+                        
+                            $scope.validATTUID(function(){
+                                console.log('OK');
+                                $window.location = '#/responder-categoria/'+$scope.encuestaId;
+                            });
+                        
                         }else{
                             $rootScope.alert = true;
                             $rootScope.mensajeAlerta = "EL ATTUID es incorrecto";
@@ -97,7 +124,7 @@
         $scope.ingresar();
     };
 
-    Controller.$inject = ['$scope', '$rootScope', '$window', '$internal', '$encuestas', '$routeParams'];
+    Controller.$inject = ['$scope', '$rootScope', '$window', '$internal', '$encuestas', '$routeParams', '$attuidValid'];
 
     angular
         .module('responderEncuesta')

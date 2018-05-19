@@ -44,6 +44,10 @@
             templateUrl: baseUrl + 'preguntas/views/responder-categoria.view.html',
             controller: 'ResponderCategoriaController'
         });
+        $routeProvider.when('/responder-categoria/:id', {
+            templateUrl: baseUrl + 'preguntas/views/responder-categoria.view.html',
+            controller: 'ResponderCategoriaController'
+        });
 
         $routeProvider.when('/enviar-encuesta', {
             templateUrl: baseUrl + 'preguntas/views/enviar-encuesta.view.html',
