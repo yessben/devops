@@ -4,12 +4,14 @@
     var Controller = function ($scope, $window, $internal) {
 
         $scope.calificacion = $internal.calificacion;
-        $scope.tipo = $internal.encuesta.tipoEncuesta.id;
-        $scope.nombre = $internal.responderEncuesta.nombre;
+        $scope.tipo = $internal.encuesta && $internal.encuesta.tipoEncuesta ? $internal.encuesta.tipoEncuesta.id : 0;
+        $scope.id = $internal.encuesta.id;        
+        $scope.nombre = $internal.responderEncuesta ? $internal.responderEncuesta.nombre : "";
         
 
     	$scope.terminar = function(){
-    		$window.location = "#/";
+            // $window.location = "#/";
+            $window.location = '#/responder-encuesta/' + $scope.id;
     	};
 
     };

@@ -5,9 +5,9 @@
             <p>Se han registrado tus respuestas</p>
         </div>
         <div class="center-middle"  ng-show="tipo === 3">
-            <p>¡{{nombre}}!</p>
+            <p ng-show="nombre">¡{{nombre}}!</p>
             <p>Tu calificación es: {{calificacion}} %</p>
         </div>
-        <button type="button" class="button-dark" ng-click="terminar()">TERMINAR</button>
+        <!-- <button type="button" class="button-dark" ng-click="terminar()">TERMINAR</button> -->
     </div>
 </main>

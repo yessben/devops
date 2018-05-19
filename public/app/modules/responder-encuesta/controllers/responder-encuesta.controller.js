@@ -4,7 +4,7 @@
     var Controller = function ($scope, $rootScope, $window, $internal, $encuestas, $routeParams, $attuidValid) {
         
         $scope.encuestaId = $routeParams.id;
-        //$scope.encuesta = $internal.encuesta;
+        $scope.tipo = 'Encuesta';
 
          $scope.ingresar = function () {
 
@@ -15,6 +15,10 @@
                 }, function (data) {
                     $rootScope.spin = false;
                     $scope.encuesta = data.data;
+
+                    if($scope.encuesta.tipoEncuesta.id > 2){
+                        $scope.tipo = $scope.encuesta.tipoEncuesta.name;
+                    }
 
                     $scope.encuesta.vigenciaInicio = new Date($scope.encuesta.vigenciaInicio);
                     $scope.encuesta.vigenciaInicio = $scope.encuesta.vigenciaInicio.setHours($scope.encuesta.vigenciaInicio.getHours() + 5);
