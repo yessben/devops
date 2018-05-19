@@ -18,7 +18,9 @@
             respuesta.attuid = $internal.responderEncuesta.attuid;
             respuesta.nombre = $internal.responderEncuesta.nombre;
             
-            respuesta.attuid = respuesta.attuid.toUpperCase();
+            if(respuesta.attuid){
+                respuesta.attuid = respuesta.attuid.toUpperCase();
+            }
 
             respuesta.$save().then(function (data) {
                 $rootScope.spin = false;
