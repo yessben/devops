@@ -7,6 +7,8 @@
         $scope.id = '';
         $scope.attuid = '';
         $scope.nombre = '';
+        $scope.respuestasOK = '';
+        
 
         var glo = new $glo();
         
@@ -16,6 +18,7 @@
             glo.id = $scope.id;
             glo.attuid = $scope.attuid; 
             glo.nombre = $scope.nombre;
+            glo.respuestasOK = $scope.respuestasOK;
 
             $internal.encuesta = { tipoEncuesta: { id: 3 } };
             $internal.responderEncuesta = { nombre: glo.nombre };
