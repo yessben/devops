@@ -14,24 +14,24 @@
                     id_encuesta: $scope.encuestaId
                 }, function (data) {
                     $rootScope.spin = false;
-                    $scope.encuesta = data.data;
-
-                    if($scope.encuesta.tipoEncuesta.id > 2){
-                        $scope.tipo = $scope.encuesta.tipoEncuesta.name;
-                    }
-
-                    $scope.encuesta.vigenciaInicio = new Date($scope.encuesta.vigenciaInicio);
-                    $scope.encuesta.vigenciaInicio = $scope.encuesta.vigenciaInicio.setHours($scope.encuesta.vigenciaInicio.getHours() + 5);
-
-                    $scope.encuesta.valides = new Date($scope.encuesta.valides);
-                    $scope.encuesta.valides = $scope.encuesta.valides.setHours($scope.encuesta.valides.getHours() + 5);
-
-                    $scope.encuesta.date = new Date($scope.encuesta.date);
-                    $scope.encuesta.date = $scope.encuesta.date.setHours($scope.encuesta.date.getHours() + 5);
                     
-                    
-                    $internal.encuesta = data.data;
                     if (data.success) {
+                        $scope.encuesta = data.data;
+
+                        if($scope.encuesta.tipoEncuesta.id > 2){
+                            $scope.tipo = $scope.encuesta.tipoEncuesta.name;
+                        }
+
+                        $scope.encuesta.vigenciaInicio = new Date($scope.encuesta.vigenciaInicio);
+                        $scope.encuesta.vigenciaInicio = $scope.encuesta.vigenciaInicio.setHours($scope.encuesta.vigenciaInicio.getHours() + 5);
+
+                        $scope.encuesta.valides = new Date($scope.encuesta.valides);
+                        $scope.encuesta.valides = $scope.encuesta.valides.setHours($scope.encuesta.valides.getHours() + 5);
+
+                        $scope.encuesta.date = new Date($scope.encuesta.date);
+                        $scope.encuesta.date = $scope.encuesta.date.setHours($scope.encuesta.date.getHours() + 5);
+                        
+                        $internal.encuesta = data.data;
                         $scope.init();
                     } else {
                         // $window.location = '#/inicio-alert/' + $scope.encuestaId;
