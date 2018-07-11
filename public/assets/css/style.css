@@ -17,6 +17,18 @@ header{
     left: 0px;
     right: 0px;
 }
+header > i{
+    margin-top: 20px;
+    margin-left: 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url(../img/ICOS_A_A.svg);
+    background-position: -475px -190px;
+    background-size: 800px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
 ul{
     list-style: none;
 }
@@ -54,6 +66,7 @@ button{
     grid-template-columns: auto auto;
     padding: 30px 30px;   
     background-color:rgb(255,255,255);  
+    box-shadow: 0 0 50px rgba(0,0,0,.5); 
   }
 
 .item1 { grid-area: header; padding: 20px; color: rgb(255, 255, 255); }
@@ -104,7 +117,6 @@ button{
 }
 .content-cards i.house,
 .content-cards i.render{
-    
     margin-top: 20px;
     display: block;
     width: 58px;
@@ -120,4 +132,13 @@ button{
 p{
     color: #053780;
     /* color: #0E62AC  */
+}
+
+.background {
+    position:absolute;
+    display:block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 750px!important;
 }

@@ -7,11 +7,50 @@
     <title>A&A</title>
     <link rel="stylesheet" href="./assets/css/normalize.css">    
     <link rel="stylesheet" href="./assets/css/style.css">
+
+
+        
 </head>
 <body>
 
+        <script src="assets/libs/particles.js"></script>
+        <script>
+window.onload = function() {
+        Particles.init({
+          selector: '.background',
+          color: '#000000',
+          maxParticles: 80,
+          connectParticles: true,
+          responsive: [
+            {
+              breakpoint: 768,
+              options: {
+                maxParticles: 80
+              }
+            }, {
+              breakpoint: 375,
+              options: {
+                maxParticles: 50
+              }
+            }
+          ]
+        });
+      };
+
+
+      function sendMail() {
+    var link = "cyber_donas123@hotmail.com"
+             + "&subject=" + escape("This is my subject")
+             + "&body=" + "XD";
+    ;
+
+    window.location.href = link;
+}
+
+        </script>
+
     <header>
-        <i>&</i>
+        <i></i>
         <nav>
             <ul>
                 <li>Nosotros</li>
@@ -20,6 +59,8 @@
             </ul>
         </nav>
     </header>
+
+    <canvas class="background"></canvas>
     <div class="parallax bg1"></div>
 
     <div class="grid-container content-cards">
@@ -67,12 +108,11 @@
         <div class="item1"> Atencion en linea</div>
         <div class="item21"><input type="text" placeholder="Nombre"></div>
         <div class="item22"><input type="text" placeholder="E-mail"></div>
-        <div class="item23"><button>Enviar</button></div>
+        <div class="item23"><button onclick="sendMail();">Enviar</button></div>
         <div class="item3">Aviso de privacidad. <br>
                 Avalúos & Arquitectos. Derechos Reservados.</div>        
     </div>
             
     
-
 </body>
 </html>
