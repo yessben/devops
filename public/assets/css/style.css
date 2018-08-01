@@ -1,5 +1,9 @@
 
 @font-face {
+    font-family: Gincra_Sans_Bold;
+    src: url(../fonts/Gincra_Sans_Bold.otf);
+}
+@font-face {
     font-family: Gincra_Sans_Light;
     src: url(../fonts/Gincra_Sans_Light.otf);
 }
@@ -8,14 +12,21 @@ body{
     font-family: 'Gincra_Sans_Light', Arial;
     font-size: 18px;
 }
+b{
+    font-family: 'Gincra_Sans_Bold', Arial;
+
+}
 header{
     height: 80px;
-    background-color: rgb(255,255,255,.7);
+    background-color: rgb(255,255,255,.9);
     position: fixed;
     width: 100%;
     top: 0px;
     left: 0px;
     right: 0px;
+    z-index: 4;
+    letter-spacing: 2px;
+    font-size: 16px;
 }
 header > i{
     margin-top: 20px;
@@ -34,15 +45,30 @@ ul{
 }
 ul li{
     display: inline-block;
-    color: #053780;
+    color: rgb(50,50,50);
     font-weight: bold;
     cursor: pointer;
 }
 nav{
     float: right;
+    margin-right: 50px;
 }
 nav ul li{
-    padding: 10px;
+    padding: 15px;
+}
+nav ul li a{
+    color: rgb(5,55,128);
+    letter-spacing: 0;
+    text-decoration: none;
+}
+nav ul li.phone{
+    font-size: 18px;
+}
+nav ul li:hover{
+    color: rgb(5,55,128)
+}
+nav ul li.phone:hover a{
+    color: rgba(5,55,128,.7)
 }
 input{
     background-color: transparent;
@@ -101,9 +127,33 @@ button{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
 .parallax.bg1{
     background-image: url("../img/principal_1.jpg");    
+}
+.parallax.bg1 .card-home{
+    /* background-color: rgba(255,255,255,.9); */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc( (100vh / 2) - 80px  );
+    z-index: 2;
+    padding: 20px;
+    text-align: center;
+}
+.parallax.bg1 .card-home h1{
+    color: rgb(255, 255, 255);
+    font-family: 'Gincra_Sans_Bold', Arial;
+    font-size: 100px;
+    text-shadow: 0 0 50px rgb(0,0,0);
+    margin: 0.17em 0;
+}
+.parallax.bg1 .card-home p{
+    font-size: 36px;
+    text-shadow: 0 0 20px rgb(0,0,0);
+    margin: 0.17em 0;
+
 }
 .parallax.bg2{
     background-image: url("../img/footer_mapa.png");
@@ -137,8 +187,8 @@ p{
 .background {
     position:absolute;
     display:block;
-    top: 0;
+    top: 80px;
     left: 0;
-    z-index: 0;
-    height: 750px!important;
+    z-index: 1;
+    height: 670px!important;
 }

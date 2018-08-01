@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es"  ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,113 +7,33 @@
     <title>A&A</title>
     <link rel="stylesheet" href="./assets/css/normalize.css">    
     <link rel="stylesheet" href="./assets/css/style.css">
-
-    
-
-        
 </head>
-<body>
+<body ng-controller="AppController">
 
         <script src="assets/libs/particles.js"></script>
-        <script>
-window.onload = function() {
-        Particles.init({
-          selector: '.background',
-          color: '#000000',
-          maxParticles: 80,
-          connectParticles: true,
-          responsive: [
-            {
-              breakpoint: 768,
-              options: {
-                maxParticles: 80
-              }
-            }, {
-              breakpoint: 375,
-              options: {
-                maxParticles: 50
-              }
-            }
-          ]
-        });
-      };
 
+        <!-- Render view -->
+        <div ng-view></div>
 
-      function sendMail() {
-    var link = "cyber_donas123@hotmail.com"
-             + "&subject=" + escape("This is my subject")
-             + "&body=" + "XD";
-    ;
+        <!-- References angular.js -->
+        <script src="assets/libs/angular.min.js"></script>
+        <script src="assets/libs/angular-locale_es-mx.js"></script>
+        <script src="assets/libs/angular-route.min.js"></script>
+        <script src="assets/libs/angular-touch.min.js"></script>
+        <script src="assets/libs/angular-resource.min.js"></script>
 
-    window.location.href = link;
-}
+        <!-- app config -->
+        <script src="app/config/app.module.js"></script>
+        <script src="app/config/app.router.js"></script>
+        <script src="app/config/app.controller.js"></script>
+        <script src="app/config/app.singleton.js"></script>
+        <script src="app/config/app.resourceProvider.js"></script>
 
-        </script>
+        <!-- Modules  -->
+        <script src="app/modules/home/controllers/home.controller.js"></script>
 
-    <header>
-        <i></i>
-        <nav>
-            <ul>
-                <li>Nosotros</li>
-                <li>Servicios</li>
-                <li>Contacto</li>              
-            </ul>
-        </nav>
-    </header>
-
-    <canvas class="background"></canvas>
-    <div class="parallax bg1"></div>
-
-    <div class="grid-container content-cards">
-            <div class="grid-item">
-                    <img class="img-card" src="assets/img/recamara.jpg" alt="">
-            </div>
-            <div class="grid-item">
-                    <i class="house"></i>
-                    <p>
-                            Ofrecemos servicios de valuación en todo el país
-                            y contamos con experiencia en todo tipo de inmuebles
-                            y activos, abarcando todos los propósitos que requieren
-                            los clientes
-                            <br>
-                            <br>
-                            Avalúos para aprovechar crédito
-                            INFONAVIT o FOVISSSTE
-                            <br>
-                            <br>
-                            Traslado de domino, aseguramiento o juicios
-                    </p>
-            </div>
-            <div class="grid-item">
-                    <img class="img-card" src="assets/img/render.jpg" alt="">
-            </div>
-            <div class="grid-item">
-                    <i class="render"></i>
-                    <p>
-                            Arquitectura, diseño y contrucción:
-                            vivienda comercial,industrial, residencial
-                            <br>
-                            <br>
-                            Mantenimiento integral de inmuebles
-                            Servicios Digitales:
-                            <br>
-                            <br>
-                            Levantamientos, renders, recorridos virtuales
-                    </p>
-            </div>
-    </div>
-
-    <div class="parallax bg2"></div>
-
-    <div class="grid-container-footer">
-        <div class="item1"> Atencion en linea</div>
-        <div class="item21"><input type="text" placeholder="Nombre"></div>
-        <div class="item22"><input type="text" placeholder="E-mail"></div>
-        <div class="item23"><button onclick="sendMail();">Enviar</button></div>
-        <div class="item3">Aviso de privacidad. <br>
-                Avalúos & Arquitectos. Derechos Reservados.</div>        
-    </div>
-            
-    
+        <!-- Shared	 -->
+        <!-- Components -->
+        <script src="app/shared/components/ng-spin/ng-spin.directive.js"></script>
 </body>
 </html>
