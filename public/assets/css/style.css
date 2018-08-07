@@ -10,7 +10,8 @@
 body{
     background-color: rgb(0,0,0);
     font-family: 'Gincra_Sans_Light', Arial;
-    font-size: 18px;
+    font-size: 20px;
+    color: rgb(50,50,50)
 }
 b{
     font-family: 'Gincra_Sans_Bold', Arial;
@@ -27,6 +28,11 @@ header{
     z-index: 4;
     letter-spacing: 2px;
     font-size: 16px;
+    transition: .5s;
+}
+header.up{
+    top: -80px;
+    transition: .5s;
 }
 header > i{
     margin-top: 20px;
@@ -49,6 +55,9 @@ ul li{
     font-weight: bold;
     cursor: pointer;
 }
+a{
+    color: rgb(5,55,128);
+}
 nav{
     float: right;
     margin-right: 50px;
@@ -57,7 +66,6 @@ nav ul li{
     padding: 15px;
 }
 nav ul li a{
-    color: rgb(5,55,128);
     letter-spacing: 0;
     text-decoration: none;
 }
@@ -87,12 +95,79 @@ button{
     height: 30px;
 }
 
+h2{
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 50px;
+}
+h3{
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+h4{
+    text-align: center;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.us{
+    padding: 40px;
+    box-shadow: 0 0 50px rgba(0,0,0,.5); 
+}
+.us h2,
+.us h3,
+.us p{
+    display: block;
+    width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.us p{
+    font-size: 20px;
+}
+.backgroud-wall{
+    background-image: url(../img/dark_wall.png);
+}
+.c-white{
+    color: rgb(255, 255, 255);
+}
+.c-blue{
+    color:#053780;
+}
+.c-amber{
+    color: #c9aa5d;
+}
+.t-center{
+    text-align: center;
+}
+
+.services {
+    background-color:rgb(255,255,255);  
+    padding-top: 50px;
+  }
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto;
-    padding: 30px 30px;   
+    grid-template-columns:auto auto auto;
+  }
+  .grid-container-4 {
+    display: grid;
     background-color:rgb(255,255,255);  
-    box-shadow: 0 0 50px rgba(0,0,0,.5); 
+    grid-template-columns:auto auto auto auto;
+  }
+  .wrapper-grid-container-4{
+    padding: 50px 15%;
+    padding-top: 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  .grid-container-4 img{
+      height: 60px;
   }
 
 .item1 { grid-area: header; padding: 20px; color: rgb(255, 255, 255); }
@@ -111,6 +186,18 @@ button{
     background-color:rgb(0,0,0);  
     max-width: 1000px;
     margin: auto;
+    color: rgb(200,200,200);
+  }
+  .grid-container-footer h3{
+    text-align: left;
+    color: rgb(200,200,200);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 18px;
+  }
+  .grid-container-footer p{
+    color: rgb(240,240,240);
+    font-size: 14px;
   }
 
   .grid-container.content-cards{
@@ -118,7 +205,14 @@ button{
   }
 
 .grid-item {
-    padding: 30px 30px;;
+    padding: 5px 5px;
+}
+.grid-item p{
+    text-align: center;
+    font-size: 16px;
+}
+.padding-20 {
+    padding: 5%;
 }
 
 .parallax {
@@ -130,14 +224,15 @@ button{
     height: 100vh;
 }
 .parallax.bg1{
-    background-image: url("../img/principal_1.jpg");    
+    /* background-image: url("../img/sergey-zolkin-21232-unsplash.jpg"); */
+    background-image: url("../img/hans-eiskonen-18942-unsplash.jpg ");   
 }
 .parallax.bg1 .card-home{
     /* background-color: rgba(255,255,255,.9); */
     position: absolute;
     left: 0;
     right: 0;
-    bottom: calc( (100vh / 2) - 80px  );
+    bottom: calc( (100vh / 2) - 120px  );
     z-index: 2;
     padding: 20px;
     text-align: center;
@@ -153,12 +248,14 @@ button{
     font-size: 36px;
     text-shadow: 0 0 20px rgb(0,0,0);
     margin: 0.17em 0;
-
 }
 .parallax.bg2{
     background-image: url("../img/footer_mapa.png");
-    min-height: 400px; 
+    min-height: 200px; 
     background-position: cover;
+    height: 400px;
+    /* box-shadow: inset 0 200px 200px rgb(255,255,255); */
+    padding-top: 100px;
 }
 
 .content-cards img.img-card{
@@ -175,20 +272,35 @@ button{
     background-position: -577px -170px;
     background-size: 800px;
     background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
 }
 .content-cards i.render{
     background-position: -650px -170px;
 }
 p{
-    color: #053780;
+    color: rgb(50,50,50);
     /* color: #0E62AC  */
+    letter-spacing: 1px;
+    text-align: justify;
+    line-height: 1.5em;
 }
 
 .background {
     position:absolute;
     display:block;
-    top: 80px;
+    top: 0px;
     left: 0;
     z-index: 1;
-    height: 670px!important;
+    height: 100vh;
+}
+.direccion{
+    text-align: center;
+    background-color: rgba(255,255,255,.8);
+    width: 500px;
+    margin: auto;
+}
+
+img.google-maps{
+    width: 64px;
 }

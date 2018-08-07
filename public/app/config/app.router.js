@@ -4,11 +4,11 @@
     var router = function ($routeProvider) {
         var baseUrl = 'app/modules/';
         // Home
-        $routeProvider.when('/home', {
+        $routeProvider.when('/', {
             templateUrl: baseUrl + 'home/views/home.view.html',
             controller: 'HomeController'
         });
-        // $routeProvider.otherwise({redirectTo : '/'});
+        $routeProvider.otherwise({redirectTo : '/'});
     };
 
     router.$inject = ['$routeProvider'];

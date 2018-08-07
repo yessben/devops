@@ -1,7 +1,7 @@
 /*global angular*/
 (function () {
 
-    var controller = function ($scope, $rootScope) {
+    var controller = function ($scope, $rootScope, $document, $window) {
 
             Particles.init({
               selector: '.background',
@@ -22,9 +22,25 @@
                 }
               ]
             });
+
+          $scope.pixelsScrolled = 0;
+          $scope.scrollDown = false;
+
+          $document.on('scroll', function() {
+              $scope.$apply(function() {
+                $scope.pixelsScrolled < $window.scrollY ?  $scope.scrollToDown() : $scope.scrollToUp();
+                $scope.pixelsScrolled = $window.scrollY;
+              })
+          });
+          $scope.scrollToUp = function(){
+            $scope.scrollDown = false;
+          };
+          $scope.scrollToDown = function(){
+            $scope.scrollDown = true;
+          };
             
     };
-    controller.$inject = ['$scope','$rootScope'];
+    controller.$inject = ['$scope','$rootScope', '$document', '$window'];
     angular.module('app').controller('HomeController', controller);
 
 })();
