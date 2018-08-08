@@ -452,10 +452,14 @@ p.t-left{
         display: block;
     }
     .parallax.bg1 .card-home.mobile h1{
-        font-size: 52px;
+        font-size: 44px;
+        bottom: calc( (100vh / 2) - 140px );
     }
     .grid-container-footer p {
         font-size:12px;
+    }
+    .parallax.bg1 .card-home h1 {
+        text-shadow: 0 0 20px rgb(0,0,0);
     }
 }
 
