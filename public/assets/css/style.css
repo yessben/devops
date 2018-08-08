@@ -424,6 +424,10 @@ p.t-left{
         border-radius: 75px;
         font-size: 15px;
     }
+    header.up{
+        top: 0px;
+        position: absolute;
+    }
     header{
         top: 0px;
         position: absolute;
