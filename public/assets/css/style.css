@@ -35,7 +35,7 @@ header.up{
     top: -80px;
     transition: .5s;
 }
-header > i{
+header > span > i{
     margin-top: 20px;
     margin-left: 40px;
     display: block;
@@ -49,7 +49,7 @@ header > i{
     float: left;
     cursor: pointer;
 }
-header > span{
+header > span > span{
     float: left;
     margin-top: 30px;
     margin-left: 10px;
@@ -442,4 +442,13 @@ p.t-left{
     .grid-container-footer p {
         font-size:12px;
     }
+}
+
+
+.services,
+.us,
+.grid-container,
+.wrapper-grid-container-4{
+position: relative;
+z-index: 1;
 }

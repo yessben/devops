@@ -1,28 +1,35 @@
 <header ng-class="{up:scrollDown}">
-	<i></i> <span>Avalúos & Arquitectos</span>
+	<span ng-click="scrollTo('home')"><i></i> <span>Avalúos & Arquitectos</span></span>
 	<nav>
 		<ul>
-			<li>NOSOTROS</li>
-			<li>SERVICIOS</li>
-			<li>CONTACTO</li>
+			<a ng-click="scrollTo('nosotros')"> <li>NOSOTROS</li></a>
+			<a ng-click="scrollTo('services')"> <li>SERVICIOS</li></a>
+			<a ng-click="scrollTo('contacto')"> <li>CONTACTO</li></a>
 			<li class="phone"><b>
 				<a href="tel:5529425752"><i class="fas fa-phone-volume"></i> (55) 2942 5752</a></b></li>          
 		</ul>
 	</nav>
 </header>
 
-<canvas class="background"></canvas>
-<div class="parallax bg1">
+<!-- <canvas class="background"></canvas> -->
+<div id="particles-js" class="background"></div>
+
+
+<div class="parallax bg1" id="home">
 
 		<div class="card-home">
-				<h1>Avalúos & Arquitectos</h1>
+				<h1 
+				style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" 
+				unselectable="on"
+				onselectstart="return false;" 
+				onmousedown="return false;">Avalúos & Arquitectos</h1>
 				<!-- <p>
 					Avalúos, Gestiones Inmobiliarias & Proyectos Arquitectónicos
 				</p> -->
 			</div>
 </div>
 
-<div class="backgroud-wall us">
+<div class="backgroud-wall us" id="nosotros">
 	
 	<h3 class="c-white"><b>NOSOTROS</b></h3>
 	<h2 class="c-amber"><b>Somos Valuadores Inmobiliarios Certificados y Arquitectos</b></h2>
@@ -33,7 +40,7 @@
 	</p>
 </div>
 
-<div class="services">
+<div class="services" id="services">
 	<h3 class="c-dark"><b>SERVICIOS</b></h3>
 	<!-- <h2 class="c-blue"><b>Negocios inmobiliarios y gestiones</b></h2> -->
 	<div class="grid-container content-cards">
@@ -79,7 +86,7 @@
 	</div>
 </div>
 
-<div class="parallax bg2">
+<div class="parallax bg2" id="contacto">
 		
 		<h3 class="c-dark t-shadow-white"><b>CONTACTO</b></h3>
 				<div class="grid-container margin-20">
@@ -94,8 +101,8 @@
 					</a>
 				</div>
 				
-				<h3 class="c-amber t-shadow-white margin-20 margin-top-100"><b>Prolongación Vicente Martínez No. 18, <br/>	 
-					San Andrés Totoltepec, Tlalpan, Ciudad de México C.P. 14400.</b></h3>
+				<!-- <h3 class="c-amber t-shadow-white margin-20 margin-top-100"><b>Prolongación Vicente Martínez No. 18, <br/>	 
+					San Andrés Totoltepec, Tlalpan, Ciudad de México C.P. 14400.</b></h3> -->
 </div>
 
 <div class="wrapper-grid-container-4">
