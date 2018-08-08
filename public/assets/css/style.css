@@ -447,13 +447,13 @@ p.t-left{
 @media screen and (max-width: 700px) {
     .parallax.bg1 .card-home {
         display: none;
+        bottom: calc( (100vh / 2) - 140px );
     }
     .parallax.bg1 .card-home.mobile {
         display: block;
     }
     .parallax.bg1 .card-home.mobile h1{
         font-size: 44px;
-        bottom: calc( (100vh / 2) - 140px );
     }
     .grid-container-footer p {
         font-size:12px;
