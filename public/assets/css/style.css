@@ -415,7 +415,8 @@ p.t-left{
             'footer';
     }
     .parallax {
-        background-size: 700%;
+        background-size: auto 100%;
+        background-attachment: initial;
     }
 }
 @media screen and (max-width: 700px) {
