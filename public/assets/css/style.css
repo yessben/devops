@@ -348,11 +348,13 @@ p.t-left{
     line-height: 9.7;
     box-shadow: 0 0 20px rgb(0,0,0,.5);
     color: rgb(255, 255, 255);
-    transition: transform 1s;
+    transition: opacity .5s, transform .5s;
+    opacity: .8;
 }
 
 .circle:hover {
     transform: rotate(360deg);
+    opacity: 1;
 }
 
 @media screen and (max-width: 1200px) {
