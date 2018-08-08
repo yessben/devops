@@ -8,7 +8,7 @@
     src: url(../fonts/Gincra_Sans_Light.otf);
 }
 body{
-    background-color: rgb(0,0,0);
+    /* background-color: rgb(0,0,0); */
     font-family: 'Gincra_Sans_Light', Arial;
     font-size: 20px;
     color: rgb(50,50,50);
@@ -20,7 +20,7 @@ b{
 }
 header{
     height: 80px;
-    background-color: rgba(255,255,255,.9);
+    background-color: rgba(255,255,255,1);
     position: fixed;
     width: 100%;
     top: 0px;
@@ -67,6 +67,7 @@ ul li{
 }
 a{
     color: rgb(5,55,128);
+    text-decoration: none;
 }
 nav{
     float: right;
@@ -177,7 +178,7 @@ h4{
     text-align: center;
   }
   .grid-container-4 img{
-      height: 60px;
+      height: 50px;
   }
 
 .item1 { grid-area: header; padding: 20px; color: rgb(255, 255, 255); }
@@ -359,6 +360,53 @@ p.t-left{
     opacity: 1;
 }
 
+.menu-mobile{
+    display: none
+}
+.menu-mobile i.ex{
+    display: none;
+}
+.menu-mobile i.bar{
+    display: show;
+}
+.menu-mobile.show i.ex{
+    display: block;
+}
+.menu-mobile.show i.bar{
+    display: none;
+}
+.menu-mobile.show ul{
+    height: auto;
+    bottom: 0px;
+    padding-top: 20px;
+}
+
+.menu-mobile > i{
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.menu-mobile ul{
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+    background-color: #053780;
+    margin: 0;
+    padding: 0;
+    padding-top: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+.menu-mobile ul li{
+    color: rgb(255,255,255);
+    display: block;
+    padding: 10px 25px;
+}
+.menu-mobile ul li a{
+    color: rgb(255,255,255);
+}
+
 @media screen and (max-width: 1200px) {
     .parallax.bg1 .card-home h1 { 
         font-size: 80px;
@@ -384,17 +432,23 @@ p.t-left{
     }
 }
 @media screen and (max-width: 700px) {
-    nav ul > a{
+    .menu-mobile{
+        display: block;
+    }
+    header{
+        height: 50px;
+    }
+    header > span > i {
+        margin-top: 8px;
+    }
+    nav{
         display: none;
     }
-    /* nav ul li a span{
-        display: none;
-    } */
     .parallax.bg1 .card-home {
         bottom: calc( (100vh / 2) - 80px );
     }
     header .header-home span{
-        display: none;
+        margin-top: 16px;
     }
     .parallax.bg1 .card-home h1 { 
         font-size: 30px;
@@ -404,9 +458,11 @@ p.t-left{
     }
     .us{
         padding: 10px;
+        padding-top: 50px;
     }
     .us p {
         font-size: 14px;
+        text-align: left;
     }
     .grid-container {
         grid-template-columns: auto;
@@ -436,10 +492,6 @@ p.t-left{
         font-size: 15px;
     }
     header.up{
-        top: 0px;
-        position: absolute;
-    }
-    header{
         top: 0px;
         position: absolute;
     }
@@ -475,6 +527,9 @@ p.t-left{
     .parallax.bg2 {
         height: 640px;
     }
+    .parallax.bg1 .card-home.mobile h1{
+        font-size: 36px;
+    }
 }
 @media screen and (max-width: 400px) {
     .parallax.bg2 {
@@ -489,4 +544,17 @@ p.t-left{
 .wrapper-grid-container-4{
 position: relative;
 z-index: 1;
+}
+
+.grid-container-4 img.cdmx{
+    height: 40px;
+    margin-top: 10px;
+}
+.grid-container-4 img.savac{
+    height: 60px;
+}
+
+.fa-lg {
+    font-size: 1.7em!important;
+    line-height: 1em!important;
 }

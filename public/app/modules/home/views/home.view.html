@@ -10,6 +10,19 @@
 			</li>          
 		</ul>
 	</nav>
+	<div class="menu-mobile" ng-class="{show: menuShow}">
+		<i class="fas fa-bars c-blue bar fa-lg" ng-click="showMenu()"></i>
+		<i class="fas fa-times c-blue ex fa-lg" ng-click="hideMenu()"></i>
+
+		<ul>
+			<a ng-click="scrollTo('nosotros')"  ng-click="hideMenu()"> <li>NOSOTROS</li></a>
+			<a ng-click="scrollTo('services')"  ng-click="hideMenu()"> <li>SERVICIOS</li></a>
+			<a ng-click="scrollTo('contacto')"  ng-click="hideMenu()"> <li>CONTACTO</li></a>
+			<li class="phone"><b>
+				<a href="tel:5529425752"><span>(55) 2942 5752</span></a></b>
+			</li>
+		</ul>
+	</div>
 </header>
 
 <!-- <canvas class="background"></canvas> -->
@@ -116,10 +129,10 @@
 <div class="wrapper-grid-container-4">
 	<p class="t-center">Registro y especialidad en valuación inmobiliaria</p>
 <div class="grid-container-4">
-	<div class="padding-20"><img src="assets/img/1_CDMX.png" alt=""></div>
+	<div class="padding-20"><img class="cdmx" src="assets/img/1_CDMX.png" alt=""></div>
 	<div class="padding-20"><img src="assets/img/2_infonavit.gif" alt=""></div>
 	<div class="padding-20"><img src="assets/img/3_issste.png" alt=""></div>
-	<div class="padding-20"><img src="assets/img/4_savac.png" alt=""></div>
+	<div class="padding-20"><img class="savac" src="assets/img/4_savac.png" alt=""></div>
 </div>
 </div>
 
@@ -137,8 +150,8 @@
 	<div class="item22 c-white">
 		<h3>Correo Electronico</h3>
 		<p class="t-left">
-		cperezromero@avaluos&arquitectos.com<br>
-		japa@avaluos&arquitectos.com
+		cotizaciones@avaluos&arquitectos.com<br>
+		info@avaluos&arquitectos.com
 		</p>
 
 	</div>
@@ -150,5 +163,8 @@
 			</p>
 	</div>
 	<div class="item3">Aviso de privacidad. <br>
-			Avalúos & Arquitectos. Derechos Reservados.</div>        
+			Avalúos & Arquitectos. Derechos Reservados. <br><br>
+
+			<!-- Design & Development by <a href="http://alom.mx">Alom</a> -->
+		</div>        
 </div>

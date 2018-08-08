@@ -3,6 +3,13 @@
 
     var controller = function ($scope, $rootScope, $document, $window, $anchorScroll, $location, anchorSmoothScroll) {
 
+      $scope.menuShow = false;
+      $scope.showMenu = function(){
+        $scope.menuShow = true
+      };
+      $scope.hideMenu = function(){
+        $scope.menuShow = false;
+      };
       $scope.scrollTo = function(id) {
         $location.hash(id);
         // $anchorScroll();
@@ -137,18 +144,18 @@ el.style.position = "fixed";
           $scope.pixelsScrolled = 0;
           $scope.scrollDown = false;
 
-          $document.on('scroll', function() {
-              $scope.$apply(function() {
-                $scope.pixelsScrolled < $window.scrollY ?  $scope.scrollToDown() : $scope.scrollToUp();
-                $scope.pixelsScrolled = $window.scrollY;
-              })
-          });
-          $scope.scrollToUp = function(){
-            $scope.scrollDown = false;
-          };
-          $scope.scrollToDown = function(){
-            $scope.scrollDown = true;
-          };
+          // $document.on('scroll', function() {
+          //     $scope.$apply(function() {
+          //       $scope.pixelsScrolled < $window.scrollY ?  $scope.scrollToDown() : $scope.scrollToUp();
+          //       $scope.pixelsScrolled = $window.scrollY;
+          //     })
+          // });
+          // $scope.scrollToUp = function(){
+          //   $scope.scrollDown = false;
+          // };
+          // $scope.scrollToDown = function(){
+          //   $scope.scrollDown = true;
+          // };
 
         }
             
