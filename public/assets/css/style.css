@@ -450,6 +450,8 @@ p.t-left{
     }
     .parallax.bg1 .card-home.mobile {
         display: block;
+    }
+    .parallax.bg1 .card-home.mobile h1{
         font-size: 52px;
     }
     .grid-container-footer p {
