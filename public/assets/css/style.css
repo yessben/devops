@@ -415,6 +415,14 @@ p.t-left{
             'footer';
     }
     .parallax {
-        background-size: auto 100%;
+        background-size: 100%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .parallax.bg1 .card-home h1 {
+        font-size: 20px;
+    }
+    .grid-container-footer p {
+        font-size:12px;
     }
 }
