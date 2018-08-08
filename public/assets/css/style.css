@@ -310,9 +310,11 @@ p{
     position:absolute;
     display:block;
     top: 0px;
-    left: 0;
+    left: 0px;
+    right: 0px;
     z-index: 1;
-    height: 100vh;
+    height: 100%;
+    width: 100vw;
 }
 .direccion{
     text-align: center;
