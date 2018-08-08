@@ -414,4 +414,7 @@ p.t-left{
             'main3'
             'footer';
     }
+    .parallax {
+        background-size: auto 100%;
+    }
 }
