@@ -365,6 +365,9 @@ p.t-left{
     }
 }
 @media screen and (max-width: 1000px) {
+    .parallax.bg1 .card-home {
+        bottom: calc( (100vh / 2) - 100px );
+    }
     .parallax.bg1 .card-home h1 { 
         font-size: 50px;
     }
@@ -387,6 +390,9 @@ p.t-left{
     /* nav ul li a span{
         display: none;
     } */
+    .parallax.bg1 .card-home {
+        bottom: calc( (100vh / 2) - 80px );
+    }
     header .header-home span{
         display: none;
     }
@@ -420,7 +426,7 @@ p.t-left{
             'footer';
     }
     .parallax {
-        background-size: auto 100%;
+        background-size: auto 130%;
         background-attachment: initial;
     }
     .circle{
@@ -438,7 +444,7 @@ p.t-left{
         position: absolute;
     }
     .parallax.bg2 {
-        height: 650px;
+        height: 750px;
     }
 }
 @media screen and (max-width: 600px) {
@@ -458,9 +464,22 @@ p.t-left{
     .parallax.bg1 .card-home h1 {
         text-shadow: 0 0 20px rgb(0,0,0);
     }
+    .parallax.bg2 {
+        height: 700px;
+    }
     /* .parallax {
         height: calc(100vh - 282px);
     } */
+}
+@media screen and (max-width: 500px) {
+    .parallax.bg2 {
+        height: 640px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .parallax.bg2 {
+        height: 620px;
+    }
 }
 
 
