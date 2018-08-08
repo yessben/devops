@@ -1,12 +1,13 @@
 <header ng-class="{up:scrollDown}">
-	<span ng-click="scrollTo('home')"><i></i> <span>Avalúos & Arquitectos</span></span>
+	<span   class="header-home" ng-click="scrollTo('home')"><i></i> <span>Avalúos & Arquitectos</span></span>
 	<nav>
 		<ul>
 			<a ng-click="scrollTo('nosotros')"> <li>NOSOTROS</li></a>
 			<a ng-click="scrollTo('services')"> <li>SERVICIOS</li></a>
 			<a ng-click="scrollTo('contacto')"> <li>CONTACTO</li></a>
 			<li class="phone"><b>
-				<a href="tel:5529425752"><i class="fas fa-phone-volume"></i> (55) 2942 5752</a></b></li>          
+				<a href="tel:5529425752"><i class="fas fa-phone-volume"></i> <span>(55) 2942 5752</span></a></b>
+			</li>          
 		</ul>
 	</nav>
 </header>
@@ -26,6 +27,13 @@
 				<!-- <p>
 					Avalúos, Gestiones Inmobiliarias & Proyectos Arquitectónicos
 				</p> -->
+			</div>
+			<div class="card-home mobile">
+				<h1>	
+					Avalúos <br>
+					& <br>
+					Arquitectos
+				</h1>
 			</div>
 </div>
 

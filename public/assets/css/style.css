@@ -247,6 +247,9 @@ h4{
     padding: 20px;
     text-align: center;
 }
+.card-home.mobile{
+    display: none;
+}
 .parallax.bg1 .card-home h1{
     color: rgb(255, 255, 255);
     font-family: 'Gincra_Sans_Bold', Arial;
@@ -373,7 +376,7 @@ p.t-left{
         padding-left: 2px;
         padding-right: 2px;
     }
-    header > i {
+    header > span > i {
         margin-left: 20px;
     }
     nav{
@@ -381,7 +384,13 @@ p.t-left{
     }
 }
 @media screen and (max-width: 700px) {
-    nav {
+    nav ul > a{
+        display: none;
+    }
+    /* nav ul li a span{
+        display: none;
+    } */
+    header .header-home span{
         display: none;
     }
     .parallax.bg1 .card-home h1 { 
@@ -436,8 +445,12 @@ p.t-left{
     }
 }
 @media screen and (max-width: 700px) {
-    .parallax.bg1 .card-home h1 {
-        font-size: 20px;
+    .parallax.bg1 .card-home {
+        display: none;
+    }
+    .parallax.bg1 .card-home.mobile {
+        display: block;
+        font-size: 52px;
     }
     .grid-container-footer p {
         font-size:12px;
