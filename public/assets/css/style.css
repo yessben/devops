@@ -254,7 +254,7 @@ h4{
     color: rgb(255, 255, 255);
     font-family: 'Gincra_Sans_Bold', Arial;
     font-size: 100px;
-    text-shadow: 0 0 50px rgb(0,0,0);
+    text-shadow: 0 0 50px rgba(0,0,0,.5);
     margin: 0.17em 0;
 }
 .parallax.bg1 .card-home p{
@@ -404,6 +404,8 @@ p.t-left{
     color: rgb(255,255,255);
     display: block;
     padding: 10px 25px;
+    font-size: 24px;
+    letter-spacing: 4px;
 }
 .menu-mobile ul li a{
     color: rgb(255,255,255);
@@ -518,7 +520,7 @@ footer{
         font-size:12px;
     }
     .parallax.bg1 .card-home h1 {
-        text-shadow: 0 0 20px rgb(0,0,0);
+        text-shadow: 0 0 20px rgba(0,0,0,.5);
     }
     .parallax.bg2 {
         height: 700px;
