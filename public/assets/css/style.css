@@ -404,8 +404,13 @@ p.t-left{
     color: rgb(255,255,255);
     display: block;
     padding: 10px 25px;
-    font-size: 24px;
+    font-size: 14px;
     letter-spacing: 4px;
+}
+
+
+.menu-mobile ul li.phone{
+    font-size: 18px;
 }
 .menu-mobile ul li a{
     color: rgb(255,255,255);
@@ -561,6 +566,6 @@ z-index: 1;
 }
 
 .fa-lg {
-    font-size: 1.7em!important;
-    line-height: 1em!important;
+    font-size: 1.3em!important;
+    line-height: 1.4em!important;
 }
