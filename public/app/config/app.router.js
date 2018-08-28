@@ -1,7 +1,7 @@
 /*global angular*/
 (function () {
 
-    var router = function ($routeProvider) {
+    var router = function ($routeProvider, $locationProvider) {
         var baseUrl = 'app/modules/';
         // Home
         $routeProvider.when('/', {
@@ -9,9 +9,13 @@
             controller: 'HomeController'
         });
         $routeProvider.otherwise({redirectTo : '/'});
+        $locationProvider.html5Mode({
+            enabled: true
+            // ,requireBase: false
+        });
     };
 
-    router.$inject = ['$routeProvider'];
+    router.$inject = ['$routeProvider', '$locationProvider'];
     angular.module('app').config(router);
 
 })();
