@@ -7,6 +7,10 @@
     font-family: Gincra_Sans_Light;
     src: url(../fonts/Gincra_Sans_Light.otf);
 }
+@font-face {
+    font-family: Gincra_Sans_Regular;
+    src: url(../fonts/Gincra_Sans_Regular.otf);
+}
 body{
     /* background-color: rgb(0,0,0); */
     font-family: 'Gincra_Sans_Light', Arial;
@@ -190,11 +194,12 @@ h4{
     'header header header'
     'main1 main2 main3'
     'footer footer footer';
-    padding: 30px 30px;   
-    background-color:rgb(0,0,0);  
+    padding: 30px 30px;
     max-width: 1000px;
     margin: auto;
     color: rgb(200,200,200);
+    z-index: 2;
+    position: relative;
   }
   .grid-container-footer h3{
     text-align: left;
@@ -206,6 +211,13 @@ h4{
   .grid-container-footer p{
     color: rgb(240,240,240);
     font-size: 14px;
+  }
+
+  .fz-16{
+    font-size: 16px!important;
+  }
+  .fm-regular{
+    font-family:Gincra_Sans_Regular, Arial;
   }
 
   .grid-container.content-cards{
