@@ -347,6 +347,7 @@ p.t-left{
     height: 200px;
     border-radius: 100px;
     background-color: #053780;
+    background-image: linear-gradient(to right, #00A1ff , #0041a6);
     margin: auto;
     cursor: pointer;
     text-align: center;
@@ -533,6 +534,16 @@ footer{
     /* .parallax {
         height: calc(100vh - 282px);
     } */
+}
+
+.map-title{
+    width: 200px;
+    margin: auto;
+    height: 50px;
+    background-color: rgba(255,255,255.8);
+    opacity: .8;
+    line-height: 2.5;
+    border-radius: 50px;
 }
 @media screen and (max-width: 500px) {
     .parallax.bg2 {
