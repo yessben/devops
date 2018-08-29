@@ -431,6 +431,15 @@ p.t-left{
 footer{
     background-color: black;
 }
+
+.services,
+.us,
+.grid-container,
+.bg2{
+position: relative;
+z-index: 1;
+padding-top: 100px;
+}
 @media screen and (max-width: 1200px) {
     .parallax.bg1 .card-home h1 { 
         font-size: 80px;
@@ -456,6 +465,9 @@ footer{
     }
 }
 @media screen and (max-width: 700px) {
+    .services, .us, .grid-container, .bg2 {
+        padding-top: 50px;
+    }
     .menu-mobile{
         display: block;
     }
@@ -572,14 +584,7 @@ footer{
 }
 
 
-.services,
-.us,
-.grid-container,
-.bg2{
-position: relative;
-z-index: 1;
-padding-top: 100px;
-}
+
 
 .grid-container-5 img.cdmx{
     height: 40px;
