@@ -558,6 +558,14 @@ padding-top: 100px;
     /* .parallax {
         height: calc(100vh - 282px);
     } */
+    .circle{
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        font-size: 14px;
+        line-height: 7.7;
+
+    }
 }
 
 .map-title{
