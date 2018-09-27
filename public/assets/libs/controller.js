@@ -16,7 +16,7 @@
     
         this.startIndex = 1;
         this.slidesNumber = 3;
-        this.baseUrl = 'http://localhost:4001/assets/img/';
+        this.baseUrl = document.location.origin + '/assets/img/';
         this.slides = [];
         for(var i = 0; i < this.slidesNumber; i++){
             this.slides.push( { image: 'url(http://localhost:4001/assets/img/'+i+'.jpg)'});
