@@ -19,7 +19,7 @@
         this.baseUrl = document.location.origin + '/assets/img/';
         this.slides = [];
         for(var i = 0; i < this.slidesNumber; i++){
-            this.slides.push( { image: 'url(http://localhost:4001/assets/img/'+i+'.jpg)'});
+            this.slides.push( { image: 'url('+this.baseUrl+i+'.jpg)'});
         };
       
         $scope.categorias = [
