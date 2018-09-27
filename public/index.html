@@ -2,7 +2,7 @@
 <html lang="es" ng-app="app">
 <head>
     
-        <<meta charset="UTF-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Centro de Cirugía Plástica</title>
@@ -12,12 +12,11 @@
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+        <script src="assets/libs/angular.min.js"></script>
+        <script src="assets/libs/ui-carousel.js"></script>
         <script src="assets/libs/TweenLite.min.js"></script>
         <script src="assets/libs/CSSPlugin.min.js"></script>
         <script src="assets/libs/parallax_content.js"></script>
-        <script src="assets/libs/angular.min.js"></script>
-        <script src="assets/libs/ui-carousel.js"></script>
         <script src="assets/libs/controller.js"></script>
 </head>
 <body ng-controller="Ctrl as ctrl">
@@ -42,9 +41,9 @@
                                 <i class="fas fa-times c-blue ex fa-lg" ng-click="hideMenu()"></i>
                 
                         <ul>
-                                <a ng-click="scrollTo('nosotros')"  ng-click="hideMenu()"> <li><b>Cirugías</b></li></a>
-                                <a ng-click="scrollTo('services')"  ng-click="hideMenu()"> <li><b>Nosotros</b></li></a>
-                                <a ng-click="scrollTo('contacto')"  ng-click="hideMenu()"> <li><b>Contactanos</b></li></a>
+                                <a href="#cirugias"  ng-click="hideMenu()"> <li><b>Cirugías</b></li></a>
+                                <a href="#us"  ng-click="hideMenu()"> <li><b>Nosotros</b></li></a>
+                                <a href="#contact"  ng-click="hideMenu()"> <li><b>Contactanos</b></li></a>
                                 <li class="phone"><b>
                                         <a href="tel:5567087001"><span>(55) 6708 7001 </span></a></b>
                                 </li>

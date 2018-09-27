@@ -84,6 +84,9 @@ nav ul{
 display: table;
 height: inherit;
 }
+a{
+    text-decoration: none;
+}
 nav ul a{
 display: table-cell;
 vertical-align: middle;
@@ -307,6 +310,9 @@ footer{
 .menu-mobile{
     display: none
 }
+.menu-mobile i{
+    color: rgb(81,18,111);
+}
 .menu-mobile i.ex{
     display: none;
 }
@@ -386,7 +392,7 @@ footer{
     }
     .content-info{
         background-color: transparent;
-        padding: 0px;
+        padding: 10px;
         letter-spacing: 1px;
     }
     section.cirugias{
