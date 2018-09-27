@@ -12,12 +12,15 @@
     src: url(../fonts/manrope_light.otf);
 }
 
-
+*{
+	box-sizing: border-box;
+}
 body{
-    font-family: 'manrope_light', Arial;
+    font-family: 'manrope_regular', Arial;
     font-size: 16px;
-    color: rgb(74,74,74);
+    color: rgb(13,13,13);
     letter-spacing: .5px;
+    line-height: 1.5;
 }
 b{
     font-family: 'manrope_bold', Arial;
@@ -26,6 +29,7 @@ b{
 h1{
     font-size: 48px;
     text-align: center;
+    font-family: 'manrope_bold', Arial;
 }
 h2{
     font-size: 32px;
@@ -34,7 +38,14 @@ h2{
 
 }
 h3{
+    text-align: center;
     font-size: 22px;
+    font-weight: normal;
+    font-family: 'manrope_regular', Arial;
+}
+h4{
+    text-align: center;
+    font-size: 18px;
     font-weight: normal;
     font-family: 'manrope_regular', Arial;
 }
@@ -59,14 +70,15 @@ header{
     right: 0;
     top:0;
     z-index: 21;
-    background-color: rgba(255,255,255,.9);
+    background-color: rgba(255,255,255,.95);
 }
 nav{
     height: inherit;
     position: relative;
-    max-width: 1500px;
+    max-width: 1200px;
     margin-left: 20px;
     margin-right: 20px;
+    margin: auto;
 }
 nav ul{
 display: table;
@@ -123,13 +135,30 @@ nav ul.a-right{
 .c-purple{
     color: rgb(81,18,111);
 }
+.b-purple{
+    background-color: rgb(81,18,111);
+}
+.padding-top-20{
+    padding-top: 20px;
+}
+.f-ligth{
+   font-family: manrope_light, Arial;
+}
 section{
-    
 }
 
 section.home{
     height: 100vh;
     overflow: hidden;
+}
+section.cirugias{
+    padding: 20px; 
+}
+section.us{
+    background-color: rgb(81,18,111) ; 
+    background-image: linear-gradient(to bottom right, rgb(81,18,111) , rgb(121,58,151)); /* Standard syntax (must be last) */
+    color: rgba(255,255,255,1);
+    padding-top: 20px;
 }
 
 .img-slide{
@@ -152,11 +181,11 @@ section.home{
     display: grid;
     grid-template-columns: auto auto auto;
     margin: 30px;
-    max-width: 1500px;
+    max-width: 1200px;
+    margin: auto;
   }
 .grid-item{
     margin: 3%;
-    grid-row: 1;
   }
 .card{
     width: 100%;
@@ -180,14 +209,11 @@ section.home{
 .card .info{
     padding: 0px 16px;
 }
-.card .info button{
-    border: none;
-    color: rgb(81,18,111);
-    background-color: transparent;
-    font-family: 'manrope_regular', Arial;
-    cursor: pointer;
-    margin: 16px 0;
-    padding: 0;
+.card .info h3{
+    text-align: left;
+}
+.card .info p{
+    color: rgb(100,100,100);
 }
 .hover-link{
     position: absolute;
@@ -215,4 +241,180 @@ section.home{
 
 ui-carousel{
     box-shadow: 0 1px 3px rgba(0,0,0,.5);   
+}
+
+
+.filer-cats{
+    max-width: 1200px;
+    border-bottom: 1px solid rgb(222,222,222);
+    width: 100%;
+    margin: 0 auto 50px auto;
+    height: 60px;
+}
+.filer-cats ul{
+    vertical-align: middle;
+    text-align: center;
+    height: inherit;
+    display: table;
+    margin: auto;
+}
+.filer-cats ul li{
+    display: table-cell;
+    padding: 0px 20px;
+    height: inherit;
+    vertical-align: middle;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(222,222,222);
+    position: relative;
+}
+.filer-cats ul li.active{
+    border-bottom: 1px solid rgba(81,18,111,.8);
+    color: rgb(81,18,111);
+}
+.filer-cats ul li.active:after {
+    position: absolute;
+    content: "";
+    bottom: -6px;
+    left: 50%;
+    margin-left: -4px;
+    border-style: solid;
+    width: 4px;
+    height: 4px;
+    border-radius: 6px;
+    text-align: center;
+    background-color: rgb(81,18,111);
+    transition: .3s;
+}
+
+.content-info{
+    background-color: rgba(255,255,255,.1);
+    border-radius: 4px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px;
+    font-family: 'manrope_light', Arial;
+    letter-spacing: 2px;
+    text-align: justify;
+    color: rgba(255,255,255,.8);
+    margin: 20px auto;
+}
+
+footer{
+    height: 300px;
+    background-color: black;
+}
+
+.menu-mobile{
+    display: none
+}
+.menu-mobile i.ex{
+    display: none;
+}
+.menu-mobile i.bar{
+    display: block;
+}
+.menu-mobile.show i.ex{
+    display: block;
+}
+.menu-mobile.show i.bar{
+    display: none;
+}
+.menu-mobile.show ul{
+    height: auto;
+    bottom: 0px;
+    padding-top: 20px;
+}
+
+.menu-mobile > i{
+    float: right;
+    margin-top: -45px;
+    margin-right: 30px;
+    position: relative;
+    z-index: 2;
+}
+.menu-mobile ul{
+    position: fixed;
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    background-color: rgb(81,18,111);
+    margin: 0;
+    padding: 0;
+    padding-top: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+.menu-mobile ul li{
+    color: rgb(255,255,255);
+    display: block;
+    padding: 10px 25px;
+    font-size: 14px;
+    letter-spacing: 4px;
+}
+
+
+.menu-mobile ul li.phone{
+    font-size: 18px;
+}
+.menu-mobile ul li a{
+    color: rgb(255,255,255);
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+    .menu-mobile{
+        display: block;
+    }
+    .menu-web{
+        display: none;
+    }
+    .grid-3 {
+        grid-template-columns: auto;
+      }
+}
+@media screen and (max-width: 500px) {
+    .logo-title{
+        display: none;
+    }
+    .filer-cats{
+        font-size: 10px;
+    }
+    .filer-cats ul li{
+        padding: 10px;
+    }
+    .content-info{
+        background-color: transparent;
+        padding: 0px;
+        letter-spacing: 1px;
+    }
+    section.cirugias{
+        padding: 0px; 
+    }
+}
+
+.logo-certi{
+    height: 150px;
+    width: 150px;
+    display: block;
+    border-radius: 75px;
+    background-color: white;
+    margin: 20px auto;
+}
+
+.foto-ceo{
+    height: 200px;
+    width: 200px;
+    display: block;
+    border-radius: 100px;
+    background-color: rgba(255,255,255,.2);
+    margin: 20px auto;
+}
+
+.margin-top-0{
+    margin-top: 0;
+}
+.margin-bottom-0{
+    margin-bottom: 0;
 }

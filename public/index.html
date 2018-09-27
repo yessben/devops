@@ -2,20 +2,23 @@
 <html lang="es" ng-app="app">
 <head>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Centro de Cirugía Plástica</title>
-    <link rel="stylesheet" href="./assets/css/normalize.css">    
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/ui-carousel.css">
+        <<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Centro de Cirugía Plástica</title>
+        <link rel="stylesheet" href="./assets/css/normalize.css">    
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/ui-carousel.css">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script src="assets/libs/angular.min.js"></script>
-    <script src="assets/libs/ui-carousel.js"></script>
-    <script src="assets/libs/controller.js"></script>
+        <script src="assets/libs/TweenLite.min.js"></script>
+        <script src="assets/libs/CSSPlugin.min.js"></script>
+        <script src="assets/libs/parallax_content.js"></script>
+        <script src="assets/libs/angular.min.js"></script>
+        <script src="assets/libs/ui-carousel.js"></script>
+        <script src="assets/libs/controller.js"></script>
 </head>
 <body ng-controller="Ctrl as ctrl">
 
@@ -25,15 +28,28 @@
                                 <a class="logo-color" href="#home"><li> <i></i> </li></a>
                                 <a class="logo-title c-purple" href="#home"><li >  Centro de Cirugía Plástica </li></a>
                         </ul>
-                        <ul class="a-center">
+                        <ul class="a-center menu-web" >
                                 <a href="#cirugias"><li>Cirugías</li></a>
-                                <a><li>Nosotros</li></a>
-                                <a><li>Contactanos</li></a>
+                                <a href="#us"><li>Nosotros</li></a>
+                                <a href="#contact"><li>Contactanos</li></a>
                         </ul>
-                        <ul class="a-right">
+                        <ul class="a-right menu-web">
                                 <a href="tel:5567087001" class="c-purple"><i class="fas fa-phone"></i><li> <b>(55) 6708 7001 </b></li> </a>
                         </ul>
                 </nav>
+                <div class="menu-mobile" ng-class="{show: menuShow}">
+                                <i class="fas fa-bars c-blue bar fa-lg" ng-click="showMenu()"></i>
+                                <i class="fas fa-times c-blue ex fa-lg" ng-click="hideMenu()"></i>
+                
+                        <ul>
+                                <a ng-click="scrollTo('nosotros')"  ng-click="hideMenu()"> <li><b>Cirugías</b></li></a>
+                                <a ng-click="scrollTo('services')"  ng-click="hideMenu()"> <li><b>Nosotros</b></li></a>
+                                <a ng-click="scrollTo('contacto')"  ng-click="hideMenu()"> <li><b>Contactanos</b></li></a>
+                                <li class="phone"><b>
+                                        <a href="tel:5567087001"><span>(55) 6708 7001 </span></a></b>
+                                </li>
+                        </ul>
+                </div>
 
         </header>
 
@@ -59,53 +75,237 @@
 
         </section>
         
-        <section class="cirugias" id="cirugias">
-                        <h2>Top 3</h2>
-                        <h1>Cirugías</h1>
+        <section class="cirugias" id="top3">
+                <h2></h2>
+                <h1>TOP 3</h1>
 
-                        <div class="grid-3">
-                                <div class="grid-item">
-                                        <div class="card">
-                                                <div class="img" style="background-image: url(assets/img/0.jpg)"></div>
-                                                <div class="hover-link"><span>VER MÁS</span></div>
-                                                <div class="info">
-                                                        <h3>Lipoescultura</h3>
-                                                        <p>It is a long established fact that a reader will be distracted</p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <div class="grid-item">
-                                        <div class="card">
-                                                <div class="img" style="background-image: url(assets/img/1.jpg)"></div>
-                                                <div class="hover-link"><span>VER MÁS</span></div>                                                
-                                                <div class="info">
-                                                        <h3>Busto</h3>
-                                                        <p>It is a long established fact that a reader will be distracted</p>
-                                                </div>
-                                        </div>
-                                        
-                                </div>
-                                <div class="grid-item">
-                                        <div class="card">
-                                                <div class="img" style="background-image: url(assets/img/2.jpg)"></div>
-                                                <div class="hover-link"><span>VER MÁS</span></div>
-                                                <div class="info">
-                                                        <h3>Nariz</h3>
-                                                        <p>It is a long established fact that a reader will be distracted</p>
-                                                </div>
+                <div class="grid-3">
+                        <div class="grid-item">
+                                <div class="card">
+                                        <div class="img" style="background-image: url(assets/img/0.jpg)"></div>
+                                        <div class="hover-link"><span>VER MÁS</span></div>
+                                        <div class="info">
+                                                <h3>Lipoescultura</h3>
+                                                <p>It is a long established fact that a reader will be distracted</p>
                                         </div>
                                 </div>
                         </div>
+                        <div class="grid-item">
+                                <div class="card">
+                                        <div class="img" style="background-image: url(assets/img/1.jpg)"></div>
+                                        <div class="hover-link"><span>VER MÁS</span></div>                                                
+                                        <div class="info">
+                                                <h3>Busto</h3>
+                                                <p>It is a long established fact that a reader will be distracted</p>
+                                        </div>
+                                </div>
+                                
+                        </div>
+                        <div class="grid-item">
+                                <div class="card">
+                                        <div class="img" style="background-image: url(assets/img/2.jpg)"></div>
+                                        <div class="hover-link"><span>VER MÁS</span></div>
+                                        <div class="info">
+                                                <h3>Nariz</h3>
+                                                <p>It is a long established fact that a reader will be distracted</p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+                <section class="cirugias" id="cirugias">
+                        <h1>Cirugías</h1>
+                        <div class="filer-cats">
+                                <ul>
+                                        <li ng-repeat="item in categorias" ng-class="{active: item.active}" ng-click="changeFilter(categorias, item)"> 
+                                                <span>{{item.name}}</span>
+                                        </li>
+                                </ul>
+                        </div>
+
+                        <div class="grid-3">
+                                        <div class="grid-item">
+                                                <div class="card">
+                                                        <div class="img" style="background-image: url(assets/img/0.jpg)"></div>
+                                                        <div class="hover-link"><span>VER MÁS</span></div>
+                                                        <div class="info">
+                                                                <h3>Lipoescultura</h3>
+                                                                <p>It is a long established fact that a reader will be distracted</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="grid-item">
+                                                <div class="card">
+                                                        <div class="img" style="background-image: url(assets/img/1.jpg)"></div>
+                                                        <div class="hover-link"><span>VER MÁS</span></div>                                                
+                                                        <div class="info">
+                                                                <h3>Busto</h3>
+                                                                <p>It is a long established fact that a reader will be distracted</p>
+                                                        </div>
+                                                </div>
+                                                
+                                        </div>
+                                        <div class="grid-item">
+                                                <div class="card">
+                                                        <div class="img" style="background-image: url(assets/img/2.jpg)"></div>
+                                                        <div class="hover-link"><span>VER MÁS</span></div>
+                                                        <div class="info">
+                                                                <h3>Nariz</h3>
+                                                                <p>It is a long established fact that a reader will be distracted</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="grid-3">
+                                                <div class="grid-item">
+                                                        <div class="card">
+                                                                <div class="img" style="background-image: url(assets/img/0.jpg)"></div>
+                                                                <div class="hover-link"><span>VER MÁS</span></div>
+                                                                <div class="info">
+                                                                        <h3>Lipoescultura</h3>
+                                                                        <p>It is a long established fact that a reader will be distracted</p>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <div class="grid-item">
+                                                        <div class="card">
+                                                                <div class="img" style="background-image: url(assets/img/1.jpg)"></div>
+                                                                <div class="hover-link"><span>VER MÁS</span></div>                                                
+                                                                <div class="info">
+                                                                        <h3>Busto</h3>
+                                                                        <p>It is a long established fact that a reader will be distracted</p>
+                                                                </div>
+                                                        </div>
+                                                        
+                                                </div>
+                                                <div class="grid-item">
+                                                        <div class="card">
+                                                                <div class="img" style="background-image: url(assets/img/2.jpg)"></div>
+                                                                <div class="hover-link"><span>VER MÁS</span></div>
+                                                                <div class="info">
+                                                                        <h3>Nariz</h3>
+                                                                        <p>It is a long established fact that a reader will be distracted</p>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="grid-3">
+                                                        <div class="grid-item">
+                                                                <div class="card">
+                                                                        <div class="img" style="background-image: url(assets/img/0.jpg)"></div>
+                                                                        <div class="hover-link"><span>VER MÁS</span></div>
+                                                                        <div class="info">
+                                                                                <h3>Lipoescultura</h3>
+                                                                                <p>It is a long established fact that a reader will be distracted</p>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="grid-item">
+                                                                <div class="card">
+                                                                        <div class="img" style="background-image: url(assets/img/1.jpg)"></div>
+                                                                        <div class="hover-link"><span>VER MÁS</span></div>                                                
+                                                                        <div class="info">
+                                                                                <h3>Busto</h3>
+                                                                                <p>It is a long established fact that a reader will be distracted</p>
+                                                                        </div>
+                                                                </div>
+                                                                
+                                                        </div>
+                                                        <div class="grid-item">
+                                                                <div class="card">
+                                                                        <div class="img" style="background-image: url(assets/img/2.jpg)"></div>
+                                                                        <div class="hover-link"><span>VER MÁS</span></div>
+                                                                        <div class="info">
+                                                                                <h3>Nariz</h3>
+                                                                                <p>It is a long established fact that a reader will be distracted</p>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                                <div class="grid-3">
+                                                                <div class="grid-item">
+                                                                        <div class="card">
+                                                                                <div class="img" style="background-image: url(assets/img/0.jpg)"></div>
+                                                                                <div class="hover-link"><span>VER MÁS</span></div>
+                                                                                <div class="info">
+                                                                                        <h3>Lipoescultura</h3>
+                                                                                        <p>It is a long established fact that a reader will be distracted</p>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="grid-item">
+                                                                        <div class="card">
+                                                                                <div class="img" style="background-image: url(assets/img/1.jpg)"></div>
+                                                                                <div class="hover-link"><span>VER MÁS</span></div>                                                
+                                                                                <div class="info">
+                                                                                        <h3>Busto</h3>
+                                                                                        <p>It is a long established fact that a reader will be distracted</p>
+                                                                                </div>
+                                                                        </div>
+                                                                        
+                                                                </div>
+                                                                <div class="grid-item">
+                                                                        <div class="card">
+                                                                                <div class="img" style="background-image: url(assets/img/2.jpg)"></div>
+                                                                                <div class="hover-link"><span>VER MÁS</span></div>
+                                                                                <div class="info">
+                                                                                        <h3>Nariz</h3>
+                                                                                        <p>It is a long established fact that a reader will be distracted</p>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
 
                         
         </section>
 
-        <section>
-                <h2> ¿Quiénes somos?</h2>
+        <section class="us" id="us">
                 <h1>Nosotros</h1>
+                <div class="content-info">
+                        <p id="contentInfo">
+                                Eu sapien odio, sociis laboriosam consequat diam donec egestas nibh, magna a, vel vehicula a. 
+                                Quisque suspendisse fermentum est nonummy placerat nam, rutrum adipiscing adipiscing aliquam, 
+                                dui cubilia ac integer, in faucibus dignissim pede erat neque, vitae nonummy vitae justo ut quam 
+                                fusce. Ac neque, sed donec aliquam integer natoque, quis eleifend aptent, pellentesque soluta, 
+                                aliquam tempor ac scelerisque eu fermentum. Phasellus sodales nonummy. Nonummy pellentesque eros 
+                                metus amet hac tincidunt, rhoncus viverra pellentesque ante gravida, mauris pulvinar quam sociis 
+                                quam duis, nam nonummy risus scelerisque. Orci id tempus facilisi, sed duis, mi vestibulum. Tempus 
+                                sollicitudin, fusce integer enim, vel magna felis curabitur in, mauris aenean lectus netus, risus
+                                bibendum auctor venenatis fringilla. Sit odio malesuada et leo, nascetur erat magna imperdiet ut 
+                                varius lobortis.
+                                <br>
+                                <br>
+                                Eu sapien odio, sociis laboriosam consequat diam donec egestas nibh, magna a, vel vehicula a. 
+                                Quisque suspendisse fermentum est nonummy placerat nam, rutrum adipiscing adipiscing aliquam, 
+                                dui cubilia ac integer, in faucibus dignissim pede erat neque, vitae nonummy vitae justo ut quam 
+                                fusce.
+                        </p>
+                </div>
+                <div>
+                                <i class="foto-ceo"></i>
+                                <h4 class="margin-bottom-0 f-ligth">Nombre Apellido Apellido</h4>
+                                <h3 class="margin-top-0 f-ligth">CEO y Fundador</h3>
+                </div>
+                <div class="b-purple padding-top-20">
+                        <h3>Nuetras certificaciones</h3>
+                        <div class="grid-3">
+                                <div class="grid-item">
+                                        <i class="logo-certi"></i>
+                                </div>
+                                <div class="grid-item">
+                                        <i class="logo-certi"></i>
+                                </div>
+                                <div class="grid-item">
+                                        <i class="logo-certi"></i>
+                                </div>
+                        </div>
+                </div>
         </section>
 
-        <section>
+        <section id="contact">
                 <h2>¿Dudas?</h2>
                 <h1>Contactanos</h1>
         </section>
