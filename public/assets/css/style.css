@@ -45,7 +45,7 @@ h3{
 }
 h4{
     text-align: center;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: normal;
     font-family: 'manrope_regular', Arial;
 }
@@ -61,6 +61,7 @@ display: inline-block;
 }
 a{
     color: rgb(74,74,74);
+    cursor: pointer;
 }
 header{
     height: 80px;
@@ -134,12 +135,20 @@ nav ul.a-right{
     right: 0;
     top:0;
 }
+hr{
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255,.5);
 
+}
 .c-purple{
     color: rgb(81,18,111);
 }
 .b-purple{
     background-color: rgb(81,18,111);
+}
+.b-black{
+    background-color: rgb(50,50,50);
 }
 .padding-top-20{
     padding-top: 20px;
@@ -155,13 +164,36 @@ section.home{
     overflow: hidden;
 }
 section.cirugias{
-    padding: 20px; 
+    padding-top: 20px; 
 }
 section.us{
     background-color: rgb(81,18,111) ; 
     background-image: linear-gradient(to bottom right, rgb(81,18,111) , rgb(121,58,151)); /* Standard syntax (must be last) */
     color: rgba(255,255,255,1);
-    padding-top: 20px;
+    padding: 20px; 
+}
+section.certi{
+    color: rgba(255,255,255,1);
+}
+section.contacto{
+    padding: 20px; 
+    height: 600px;
+}
+.contenido-contacto{background-color: rgba(255,255,255,.9);}
+.circle-r50{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: rgb(255,255,255);
+    color: rgb(81,18,111);
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.circle-r50:hover{
+    box-shadow: 0 0 20px rgba(0,0,0,.5);
+    background-color: rgb(81,18,111);
+    color: rgb(255,255,255);
 }
 .carousel-prev{
     display: none;
@@ -175,7 +207,9 @@ section.us{
     background-size: cover;
     background-position: bottom;
 }
-
+.margin-bottom-0{
+    margin-bottom: 0;
+}
 .carousel-dots {
     bottom: 20px!important;
     z-index: 20;
@@ -184,7 +218,28 @@ section.us{
     color: white!important;
 }
 
+.c-white{
+    color: white;
+}
+.t-center{
+    text-align: center;
+}
+.t-right{
+    text-align: right;
+}
+.fs-10{
+    font-size: 10px;
+}
+.padding-top-20{
+    padding-top: 20px;
+}
+.f-ligth{
+   font-family: manrope_light, Arial;
+}
 
+.padding-20{
+    padding: 20px;
+}
 .grid-3 {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -194,6 +249,14 @@ section.us{
   }
 .grid-item{
     margin: 3%;
+  }
+
+  .item-row {
+    display: table;
+    width: 100%;
+  }
+.item-col{
+    display: table-cell;
   }
 .card{
     width: 100%;
@@ -237,6 +300,14 @@ section.us{
     width: 100%;
     font-family: 'manrope_regular', Arial;
     transition: .3s;
+    padding: 20px;
+}
+.width-50p{
+    width: 50%;
+}
+.hover-link.white{
+    background-color: rgba(255,255,255, .8);
+    color: rgb(50,50,50);
 }
 .hover-link span{
     display: table-cell;
@@ -253,11 +324,13 @@ ui-carousel{
 
 
 .filer-cats{
-    max-width: 1200px;
     border-bottom: 1px solid rgb(222,222,222);
     width: 100%;
     margin: 0 auto 50px auto;
     height: 60px;
+    background-color: rgb(81,18,111);
+    color: white;
+
 }
 .filer-cats ul{
     vertical-align: middle;
@@ -274,12 +347,14 @@ ui-carousel{
     cursor: pointer;
     border-bottom: 1px solid rgb(222,222,222);
     position: relative;
+    cursor: pointer;
 }
 .filer-cats ul li.active{
-    border-bottom: 1px solid rgba(81,18,111,.8);
-    color: rgb(81,18,111);
+    border-bottom: 1px solid rgba(255,255,255,.8);
+    /* color: rgb(81,18,111); */
+    background-color: rgba(121,58,151,.8);
 }
-.filer-cats ul li.active:after {
+/* .filer-cats ul li.active:after {
     position: absolute;
     content: "";
     bottom: -6px;
@@ -292,10 +367,10 @@ ui-carousel{
     text-align: center;
     background-color: rgb(81,18,111);
     transition: .3s;
-}
+} */
 
 .content-info{
-    background-color: rgba(255,255,255,.1);
+    /* background-color: rgba(255,255,255,.1); */
     border-radius: 4px;
     max-width: 1200px;
     margin: auto;
@@ -307,9 +382,28 @@ ui-carousel{
     margin: 20px auto;
 }
 
+.padding-bottom-100{
+    padding-bottom: 100px!important;
+}
+
 footer{
-    height: 300px;
+    height: 420px;
     background-color: black;
+    padding: 50px;
+    border-top: 4px solid rgb(81,18,111);
+}
+
+.b-radius-4{
+    border-radius: 4px;
+}
+.logo-footer-blanco{
+    width: 100px;
+    height: 100px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../img/logo_blanco.svg);
+    margin: auto;
+    background-position: center;
 }
 
 .menu-mobile{
@@ -373,6 +467,55 @@ footer{
 
 
 
+.logo-certi{
+    height: 150px;
+    width: 150px;
+    display: block;
+    border-radius: 75px;
+    background-color: white;
+    margin: 20px auto;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+}
+
+.foto-ceo{
+    height: 200px;
+    width: 200px;
+    display: block;
+    border-radius: 100px;
+    background-color: rgba(255,255,255,.2);
+    margin: 20px auto;
+}
+
+.margin-top-0{
+    margin-top: 0;
+}
+.margin-bottom-0{
+    margin-bottom: 0;
+}
+
+.max-width{
+    max-width: 1200px;
+    margin: auto;
+   }
+
+.max-width-350{
+    max-width: 400px;
+    margin: auto;
+}
+.max-width-250{
+    max-width: 250px;
+    margin: auto;
+}
+.mapa{
+    background-image: url(../img/mapa_dia.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
 
 @media screen and (max-width: 1000px) {
     .menu-mobile{
@@ -403,29 +546,4 @@ footer{
     section.cirugias{
         padding: 0px; 
     }
-}
-
-.logo-certi{
-    height: 150px;
-    width: 150px;
-    display: block;
-    border-radius: 75px;
-    background-color: white;
-    margin: 20px auto;
-}
-
-.foto-ceo{
-    height: 200px;
-    width: 200px;
-    display: block;
-    border-radius: 100px;
-    background-color: rgba(255,255,255,.2);
-    margin: 20px auto;
-}
-
-.margin-top-0{
-    margin-top: 0;
-}
-.margin-bottom-0{
-    margin-bottom: 0;
 }
