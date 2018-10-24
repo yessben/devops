@@ -305,6 +305,9 @@ section.contacto{
 .width-50p{
     width: 50%;
 }
+.width-50{
+    width: 50px;
+}
 .hover-link.white{
     background-color: rgba(255,255,255, .8);
     color: rgb(50,50,50);
@@ -369,12 +372,16 @@ ui-carousel{
     transition: .3s;
 } */
 
+.c-amber {
+    color: #c9aa5d;
+}
 .content-info{
     /* background-color: rgba(255,255,255,.1); */
     border-radius: 4px;
     max-width: 1200px;
     margin: auto;
-    padding: 50px;
+    padding: 20px;
+    padding-top: 0px;
     font-family: 'manrope_light', Arial;
     letter-spacing: 2px;
     text-align: justify;
@@ -391,6 +398,13 @@ footer{
     background-color: black;
     padding: 50px;
     border-top: 4px solid rgb(81,18,111);
+    position: relative;
+}
+.manos{
+    background-image: url(../img/manos.png);
+    background-position: center;
+    background-size: auto 100% ;
+    background-repeat: no-repeat;
 }
 
 .b-radius-4{
@@ -401,9 +415,11 @@ footer{
     height: 100px;
     display: block;
     background-repeat: no-repeat;
-    background-image: url(../img/logo_blanco.svg);
+    /* background-image: url(../img/logo_blanco.svg); */
+    background-image: url(../img/manocuerpoOk.svg);
     margin: auto;
     background-position: center;
+    margin-right: 0px;
 }
 
 .menu-mobile{
@@ -509,7 +525,7 @@ footer{
     margin: auto;
 }
 .mapa{
-    background-image: url(../img/mapa_dia.jpg);
+    background-image: url(../img/mapa_dia.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
