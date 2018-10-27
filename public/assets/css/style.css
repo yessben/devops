@@ -557,7 +557,8 @@ footer{
     margin: auto;
 }
 .mapa{
-    background-image: url(../img/mapa_dia.png);
+    /* background-image: url(../img/mapa_dia.png); */
+    background-image: url(../img/mapa_noche.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
