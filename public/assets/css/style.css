@@ -638,6 +638,9 @@ footer{
     .width-33p{
         width: 100%;
     }
+    .t-left, .t-right{
+        text-align: center;
+    }
 }
 @media screen and (max-width: 500px) {
     .fs-16{
@@ -666,9 +669,6 @@ footer{
     section.contacto{
         padding: 0px;
         padding-top: 20px;
-    }
-    .t-left, .t-right{
-        text-align: center;
     }
     h1{
         font-size: 32px;
