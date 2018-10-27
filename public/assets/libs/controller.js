@@ -19,7 +19,8 @@
         this.baseUrl = document.location.origin + '/assets/img/';
         this.slides = [];
         for(var i = 0; i < this.slidesNumber; i++){
-            this.slides.push( { image: 'url('+this.baseUrl+i+'.jpg)'});
+            var strName = 's'+(i+3)+'.jpg';
+            this.slides.push( { image: 'url('+this.baseUrl+strName});
         };
       
         $scope.categorias = [
@@ -30,11 +31,66 @@
             {key: 'procedimientos', name: 'Procedimientos', active: false }
         ];
 
+        $scope.top3 = [
+            {
+                categorias: ['todo','rostro'],
+                title: 'Nariz',
+                desc: 'Es quizás la más socorrida de las cirugías de embellecimiento, olvidándose muchas veces de su función. En nuestro Centro de Cirugía no la hemos olvidado, realizamos un diagnóstico y tratamiento integral con corrección tanto estética como funcional.',
+                imgs: ['s1.jpg']
+            },
+            {
+                categorias: ['todo','rostro'],
+                title: 'Nariz',
+                desc: 'Es quizás la más socorrida de las cirugías de embellecimiento, olvidándose muchas veces de su función. En nuestro Centro de Cirugía no la hemos olvidado, realizamos un diagnóstico y tratamiento integral con corrección tanto estética como funcional.',
+                imgs: ['s4.jpg']
+            },
+            {
+                categorias: ['todo','cuerpo'],
+                title: 'Nariz',
+                desc: 'Es quizás la más socorrida de las cirugías de embellecimiento, olvidándose muchas veces de su función. En nuestro Centro de Cirugía no la hemos olvidado, realizamos un diagnóstico y tratamiento integral con corrección tanto estética como funcional.',
+                imgs: ['s6.jpg']
+            }
+        ];
+        $scope.servicios = [
+            {
+                categorias: ['todo','rostro'],
+                title: 'Nariz',
+                desc: 'Es quizás la más socorrida de las cirugías de embellecimiento, olvidándose muchas veces de su función. En nuestro Centro de Cirugía no la hemos olvidado, realizamos un diagnóstico y tratamiento integral con corrección tanto estética como funcional.',
+                imgs: ['s1.jpg']
+            },
+            {
+                categorias: ['todo','rostro'],
+                title: 'Nariz',
+                desc: 'Es quizás la más socorrida de las cirugías de embellecimiento, olvidándose muchas veces de su función. En nuestro Centro de Cirugía no la hemos olvidado, realizamos un diagnóstico y tratamiento integral con corrección tanto estética como funcional.',
+                imgs: ['s2.jpg']
+            },
+            {
+                categorias: ['todo','cuerpo'],
+                title: 'Nariz',
+                desc: 'Es quizás la más socorrida de las cirugías de embellecimiento, olvidándose muchas veces de su función. En nuestro Centro de Cirugía no la hemos olvidado, realizamos un diagnóstico y tratamiento integral con corrección tanto estética como funcional.',
+                imgs: ['s3.jpg']
+            },
+            {
+                categorias: ['todo','piel'],
+                title: 'Nariz',
+                desc: 'Es quizás la más socorrida de las cirugías de embellecimiento, olvidándose muchas veces de su función. En nuestro Centro de Cirugía no la hemos olvidado, realizamos un diagnóstico y tratamiento integral con corrección tanto estética como funcional.',
+                imgs: ['s4.jpg']
+            },
+            {
+                categorias: ['todo','procedimientos'],
+                title: 'Nariz',
+                desc: 'Es quizás la más socorrida de las cirugías de embellecimiento, olvidándose muchas veces de su función. En nuestro Centro de Cirugía no la hemos olvidado, realizamos un diagnóstico y tratamiento integral con corrección tanto estética como funcional.',
+                imgs: ['s5.jpg']
+            }
+        ]
+
+        $scope.search = {};
         $scope.changeFilter = function(list, obj){
             for(var i in list){
                 list[i].active = false;
             }
             obj.active = true;
+            $scope.search.categorias = obj.key;
         };
         $scope.menuShow = false;
         $scope.showMenu = function(){
@@ -42,7 +98,7 @@
         };
         $scope.hideMenu = function(){
             $scope.menuShow = false;
-          };
+        };
 
           $('h1').parallaxContent({
             shift: -15,

@@ -144,17 +144,24 @@ hr{
 .c-purple{
     color: rgb(81,18,111);
 }
+.c-gray{
+    color: rgb(150,150,150);
+}
 .b-purple{
     background-color: rgb(81,18,111);
 }
 .b-black{
-    background-color: rgb(50,50,50);
+    background-color: rgb(20,20,20);
 }
 .padding-top-20{
     padding-top: 20px;
 }
 .f-ligth{
    font-family: manrope_light, Arial;
+}
+
+.width-33p{
+    width: 33%;
 }
 section{
 }
@@ -230,6 +237,9 @@ section.contacto{
 .fs-10{
     font-size: 10px;
 }
+.fs-12{
+    font-size: 12px;
+}
 .padding-top-20{
     padding-top: 20px;
 }
@@ -251,12 +261,19 @@ section.contacto{
     margin: 3%;
   }
 
-  .item-row {
+.item-row {
     display: table;
     width: 100%;
   }
 .item-col{
     display: table-cell;
+  }
+.item-row-relative {
+    display: block;
+    width: 100%;
+  }
+.item-col-relative{
+    display: inline-block;
   }
 .card{
     width: 100%;
@@ -281,11 +298,16 @@ section.contacto{
     padding: 0px 16px;
 }
 .card .info h3{
-    text-align: left;
+    /* text-align: left; */
 }
 .card .info p{
     color: rgb(100,100,100);
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
 }
+
+
 .hover-link{
     position: absolute;
     top:0;
@@ -301,6 +323,16 @@ section.contacto{
     font-family: 'manrope_regular', Arial;
     transition: .3s;
     padding: 20px;
+}
+
+.img-r100{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: auto;
 }
 .width-50p{
     width: 50%;
@@ -416,7 +448,7 @@ footer{
     display: block;
     background-repeat: no-repeat;
     /* background-image: url(../img/logo_blanco.svg); */
-    background-image: url(../img/manocuerpoOk.svg);
+    background-image: url(../img/logo_blanco-white.svg);
     margin: auto;
     background-position: center;
     margin-right: 0px;

@@ -78,187 +78,41 @@
                 <h2></h2>
                 <h1>TOP 3</h1>
 
-                <div class="grid-3">
-                        <div class="grid-item">
+                <div class="item-row-relative max-width">
+                        <div class="item-col-relative padding-20 width-33p" ng-repeat="servicio in top3">
                                 <div class="card">
-                                        <div class="img" style="background-image: url(assets/img/0.jpg)"></div>
+                                        <div class="img" ng-style="{'background-image': 'url(assets/img/'+servicio.imgs[0]+')'}"></div>
                                         <div class="hover-link"><span>VER MÁS</span></div>
                                         <div class="info t-center">
-                                                <h3>Lipoescultura</h3>
-                                                <p>It is a long established fact that a reader will be distracted</p>
-                                        </div>
-                                </div>
-                        </div>
-                        <div class="grid-item">
-                                <div class="card">
-                                        <div class="img" style="background-image: url(assets/img/1.jpg)"></div>
-                                        <div class="hover-link"><span>VER MÁS</span></div>                                                
-                                        <div class="info t-center">
-                                                <h3>Busto</h3>
-                                                <p>It is a long established fact that a reader will be distracted</p>
-                                        </div>
-                                </div>
-                                
-                        </div>
-                        <div class="grid-item">
-                                <div class="card">
-                                        <div class="img" style="background-image: url(assets/img/2.jpg)"></div>
-                                        <div class="hover-link"><span>VER MÁS</span></div>
-                                        <div class="info t-center">
-                                                <h3>Nariz</h3>
-                                                <p>It is a long established fact that a reader will be distracted</p>
+                                                <h3>{{servicio.title}}</h3>
+                                                <p>{{servicio.desc}}</p>
                                         </div>
                                 </div>
                         </div>
                 </div>
         </section>
-                <section class="cirugias padding-bottom-100" id="cirugias">
-                        <h1>Cirugías</h1>
-                        <div class="filer-cats">
-                                <ul>
-                                        <li ng-repeat="item in categorias" ng-class="{active: item.active}" ng-click="changeFilter(categorias, item)"> 
-                                                <span>{{item.name}}</span>
-                                        </li>
-                                </ul>
-                        </div>
+        <section class="cirugias padding-bottom-100" id="cirugias">
+                <h1>Cirugías</h1>
+                <div class="filer-cats">
+                        <ul>
+                                <li ng-repeat="item in categorias" ng-class="{active: item.active}" ng-click="changeFilter(categorias, item)"> 
+                                        <span>{{item.name}}</span>
+                                </li>
+                        </ul>
+                </div>
 
-                        <div class="grid-3">
-                                        <div class="grid-item">
-                                                <div class="card">
-                                                        <div class="img" style="background-image: url(assets/img/0.jpg)"></div>
-                                                        <div class="hover-link"><span>VER MÁS</span></div>
-                                                        <div class="info t-center">
-                                                                <h3>Lipoescultura</h3>
-                                                                <p>It is a long established fact that a reader will be distracted</p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="grid-item">
-                                                <div class="card">
-                                                        <div class="img" style="background-image: url(assets/img/1.jpg)"></div>
-                                                        <div class="hover-link"><span>VER MÁS</span></div>                                                
-                                                        <div class="info t-center">
-                                                                <h3>Busto</h3>
-                                                                <p>It is a long established fact that a reader will be distracted</p>
-                                                        </div>
-                                                </div>
-                                                
-                                        </div>
-                                        <div class="grid-item">
-                                                <div class="card">
-                                                        <div class="img" style="background-image: url(assets/img/2.jpg)"></div>
-                                                        <div class="hover-link"><span>VER MÁS</span></div>
-                                                        <div class="info t-center">
-                                                                <h3>Nariz</h3>
-                                                                <p>It is a long established fact that a reader will be distracted</p>
-                                                        </div>
-                                                </div>
+                <div class="item-row-relative max-width">
+                        <div class="item-col-relative padding-20 width-33p" ng-repeat="servicio in servicios | filter:search:strict">
+                                <div class="card">
+                                        <div class="img" ng-style="{'background-image': 'url(assets/img/'+servicio.imgs[0]+')'}"></div>
+                                        <div class="hover-link"><span>VER MÁS</span></div>
+                                        <div class="info t-center">
+                                                <h3>{{servicio.title}}</h3>
+                                                <p>{{servicio.desc}}</p>
                                         </div>
                                 </div>
-
-                                <div class="grid-3">
-                                                <div class="grid-item">
-                                                        <div class="card">
-                                                                <div class="img" style="background-image: url(assets/img/0.jpg)"></div>
-                                                                <div class="hover-link"><span>VER MÁS</span></div>
-                                                                <div class="info t-center">
-                                                                        <h3>Lipoescultura</h3>
-                                                                        <p>It is a long established fact that a reader will be distracted</p>
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                                <div class="grid-item">
-                                                        <div class="card">
-                                                                <div class="img" style="background-image: url(assets/img/1.jpg)"></div>
-                                                                <div class="hover-link"><span>VER MÁS</span></div>                                                
-                                                                <div class="info t-center">
-                                                                        <h3>Busto</h3>
-                                                                        <p>It is a long established fact that a reader will be distracted</p>
-                                                                </div>
-                                                        </div>
-                                                        
-                                                </div>
-                                                <div class="grid-item">
-                                                        <div class="card">
-                                                                <div class="img" style="background-image: url(assets/img/2.jpg)"></div>
-                                                                <div class="hover-link"><span>VER MÁS</span></div>
-                                                                <div class="info t-center">
-                                                                        <h3>Nariz</h3>
-                                                                        <p>It is a long established fact that a reader will be distracted</p>
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-                                        <div class="grid-3">
-                                                        <div class="grid-item">
-                                                                <div class="card">
-                                                                        <div class="img" style="background-image: url(assets/img/0.jpg)"></div>
-                                                                        <div class="hover-link"><span>VER MÁS</span></div>
-                                                                        <div class="info t-center">
-                                                                                <h3>Lipoescultura</h3>
-                                                                                <p>It is a long established fact that a reader will be distracted</p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="grid-item">
-                                                                <div class="card">
-                                                                        <div class="img" style="background-image: url(assets/img/1.jpg)"></div>
-                                                                        <div class="hover-link"><span>VER MÁS</span></div>                                                
-                                                                        <div class="info t-center">
-                                                                                <h3>Busto</h3>
-                                                                                <p>It is a long established fact that a reader will be distracted</p>
-                                                                        </div>
-                                                                </div>
-                                                                
-                                                        </div>
-                                                        <div class="grid-item">
-                                                                <div class="card">
-                                                                        <div class="img" style="background-image: url(assets/img/2.jpg)"></div>
-                                                                        <div class="hover-link"><span>VER MÁS</span></div>
-                                                                        <div class="info t-center">
-                                                                                <h3>Nariz</h3>
-                                                                                <p>It is a long established fact that a reader will be distracted</p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                </div>
-
-                                                <div class="grid-3">
-                                                                <div class="grid-item">
-                                                                        <div class="card">
-                                                                                <div class="img" style="background-image: url(assets/img/0.jpg)"></div>
-                                                                                <div class="hover-link"><span>VER MÁS</span></div>
-                                                                                <div class="info t-center">
-                                                                                        <h3>Lipoescultura</h3>
-                                                                                        <p>It is a long established fact that a reader will be distracted</p>
-                                                                                </div>
-                                                                        </div>
-                                                                </div>
-                                                                <div class="grid-item">
-                                                                        <div class="card">
-                                                                                <div class="img" style="background-image: url(assets/img/1.jpg)"></div>
-                                                                                <div class="hover-link"><span>VER MÁS</span></div>                                                
-                                                                                <div class="info t-center">
-                                                                                        <h3>Busto</h3>
-                                                                                        <p>It is a long established fact that a reader will be distracted</p>
-                                                                                </div>
-                                                                        </div>
-                                                                        
-                                                                </div>
-                                                                <div class="grid-item">
-                                                                        <div class="card">
-                                                                                <div class="img" style="background-image: url(assets/img/2.jpg)"></div>
-                                                                                <div class="hover-link"><span>VER MÁS</span></div>
-                                                                                <div class="info t-center">
-                                                                                        <h3>Nariz</h3>
-                                                                                        <p>It is a long established fact that a reader will be distracted</p>
-                                                                                </div>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-
-                        
+                        </div>
+                </div>
         </section>
 
         <section class="us padding-bottom-100" id="us">
@@ -275,70 +129,42 @@
                                 inflación que han mostrado los servicios hospitalarios en las últimas épocas.
                         </p>
                 </div>
-                <!-- <div class="t-center">
-                        <i class="foto-ceo"></i>
-                        <h4 class="margin-bottom-0 f-ligth">Dr. Juan Antonio Treviño Macías</h4>
-                        <b>Director General</b>
-                        <br>
-                        <br>
-                </div> -->
-
-                <div class="item-row max-width">
-                        <div class="item-col padding-20 width-50p">
-                                <div class="card ">
-                                        <div class="img" style="background-image: url(assets/img/doctor-house.jpg)"></div>
-                                        <div class="hover-link white "><span>
-                                                Certificado por el Consejo Mexicano de Cirugía Plástica, Estética y Reconstructiva
-                                                <br>
-                                                <br>
-                                                        Certificado por el Consejo Mexicano de Médicos Bariatras
-                                                        Master en Cosmiatría</span></div>
-                                </div>
-                                <div class="info t-center">
-                                        <h4 class="margin-bottom-0">Dr. Juan Antonio Treviño Macías</h4>
-                                        <b>Director General</b>
-                                </div>
-                        </div>
-                        <div class="item-col  padding-20">
-                                <div class="card">
-                                        <div class="img" style="background-image: url(assets/img/doctor-house.jpg)"></div>
-                                        <div class="hover-link white"><span>Médico Cirujano
-                                                        Master en Cosmiatría</span></div>
-                                </div>
-                                <div class="info t-center">
-                                        <h4 class="margin-bottom-0">Dr. Octavio González Pacheco</h4>
-                                        <b>Subdirector Médico</b>
-                                </div>
-                        </div>
-                </div>
-                <div class="item-row max-width">
-                                <div class="item-col  padding-20 width-50p">
-                                        <div class="card">
-                                                <div class="img" style="background-image: url(assets/img/doctor-house.jpg)"></div>
-                                                <div class="hover-link white"><span>Certificado por el Consejo Mexicano de Anestesiología</span></div>
-                                        </div>
-                                        <div class="info t-center">
-                                                <h4 class="margin-bottom-0">Dr. Gustavo Trejo Hernández</h4>
-                                                <b>Jefe de Anestesiología</b>
-                                        </div>
-                                </div>
-                                <div class="item-col  padding-20">
-                                        <div class="card">
-                                                <div class="img" style="background-image: url(assets/img/doctor-house.jpg)"></div>
-                                                <div class="hover-link white"><span>Medicina Interna, Cardiología y Cardiología Pediátrica
-                                                                Certificado por los Consejos Mexicanos de Cardiología y Cardiología Pediátrica</span></div>
-                                        </div>
-                                        <div class="info t-center">
-                                                <h4 class="margin-bottom-0">Dr. Alfredo Bobadilla Aguirre</h4>
-                                                <b>Medicina Interna y Cardiología</b>
-                                        </div>
-                                </div>
-                        </div>
         </section>
 
-<section class="certi">
-        <div class="b-black padding-top-20">
-                        <h1>Certificaciones</h1>
+        <section class="cirugias padding-bottom-100">
+                <h1>Profecionales</h1>
+                <div class="item-row max-width">
+                        <div class="item-col t-center width-33p">
+                                <div class="img-r100" style="background-image: url(assets/img/doctor-house.jpg)"></div>
+                                <h4 class="margin-bottom-0">Dr. Juan Antonio Treviño Macías</h4>
+                                <b>Director General</b>
+                                <p class="c-gray">
+                                        Certificado por el Consejo Mexicano de Cirugía Plástica, Estética y Reconstructiva
+                                </p>
+                        </div>
+                        <div class="item-col t-center width-33p">
+                                <div class="img-r100" style="background-image: url(assets/img/doctor-house.jpg)"></div>
+                                <h4 class="margin-bottom-0">Dr. Octavio González Pacheco</h4>
+                                <b>Subdirector Médico</b>
+                                <p class="c-gray">
+                                        Médico Cirujano Master en Cosmiatría
+                                </p>
+                        </div>
+                        
+                        <div class="item-col t-center">
+                                <div class="img-r100" style="background-image: url(assets/img/doctor-house.jpg)"></div>
+                                <h4 class="margin-bottom-0">Dr. Gustavo Trejo Hernández</h4>
+                                <b>Jefe de Anestesiología</b>
+                                <p class="c-gray">
+                                        Certificado por el Consejo Mexicano de Anestesiología
+                                </p>
+                        </div>
+                </div>
+        </section>
+
+        <section class="certi">
+                <div class="b-black padding-top-20">
+                        <!-- <h1>Certificaciones</h1> -->
                         <div class="item-row">
                                 <div class="item-col">
                                         <i class="logo-certi" style="background-image: url(assets/img/certi_1.png)"></i>
@@ -353,7 +179,6 @@
                                         <i class="logo-certi" style="background-image: url(assets/img/certi_4.png)"></i>
                                 </div>
                         </div>
-                        <br>
                         <br>
                 </div>
         </section>
@@ -406,15 +231,23 @@
                 <div class="manos max-width">
                 
                 <div class="item-row c-dynamic t-center">
-                        <div class="item-col c-white">
+                        <div class="item-col c-white fs-12">
                                 <div>Dr. Juan Antonio Treviño Macías</div>
                                 <b>Director General</b>
-                                <div>
-                                        Cedula: 887687676
+                                <div class="c-gray">
+                                        Licenciatura como Médico Cirujano y Paterno: 0589999
+                                </div>
+                                <div class="c-gray">
+                                        Especialidad en Cirugía Plástica y Reconstructiva: 0030031
+                                </div>
+                                <div class="c-gray">
+                                        Cedula de especialidad: 5306
+                                </div>
+                                <div class="c-gray">
+                                        Registro cofepris: 000000000
                                 </div>
                         </div>
                 </div>
-                <br>
                 <br>
                 <br>
                 <br>
@@ -429,10 +262,10 @@
                         <div class="item-col t-right">© Centro de Cirugia Plastica S.A. de C.V.</div>
                 </div>
                 <div class="item-row c-white fs-10">
-                        <div class="item-col width-50"><a href="http://www.facebook.com/DAFTONME"><i class="fab c-white fa-2x fa-facebook cursor-pointer"></i></a></div>
-                        <div class="item-col width-50"><a href="https://www.youtube.com/channel/UClk-kCTMckOWJDuvOBNXLnw"><i class="fab c-white fa-2x fa-twitter cursor-pointer"></i></a></div>
-                        <div class="item-col width-50"><a href="https://www.instagram.com/daftonme"><i class="fab c-white fa-2x fa-instagram cursor-pointer"></i></a> </div>
-                        <div class="item-col t-right">Diseño y Desarrollo por ALOUX</div>
+                        <div class="item-col width-50"><a href="https://www.facebook.com/ccplasticasc"><i class="fab c-white fa-2x fa-facebook cursor-pointer"></i></a></div>
+                        <div class="item-col width-50"><a href="https://twitter.com/ccplasticasc"><i class="fab c-white fa-2x fa-twitter cursor-pointer"></i></a></div>
+                        <div class="item-col width-50"><a href="https://www.instagram.com/ccplasticasc"><i class="fab c-white fa-2x fa-instagram cursor-pointer"></i></a> </div>
+                        <div class="item-col t-right"> <a href="https://aloux.mx" target="_black">Diseño y Desarrollo por Aloux</a></div>
                 </div>
                 </div>
         </footer>
