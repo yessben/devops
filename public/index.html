@@ -80,12 +80,12 @@
 
                 <div class="item-row-relative max-width">
                         <div class="item-col-relative padding-20 width-33p" ng-repeat="servicio in top3">
-                                <div class="card">
+                                <div class="card" ng-click="full(servicio)">
                                         <div class="img" ng-style="{'background-image': 'url(assets/img/'+servicio.imgs[0]+')'}"></div>
                                         <div class="hover-link"><span>VER MÁS</span></div>
                                         <div class="info t-center">
-                                                <h3>{{servicio.title}}</h3>
-                                                <p>{{servicio.desc}}</p>
+                                                <h2>{{servicio.title}}</h2>
+                                                <p class="docs">{{servicio.desc}}</p>
                                         </div>
                                 </div>
                         </div>
@@ -103,12 +103,12 @@
 
                 <div class="item-row-relative max-width">
                         <div class="item-col-relative padding-20 width-33p" ng-repeat="servicio in servicios | filter:search:strict">
-                                <div class="card">
+                                <div class="card" ng-click="full(servicio)">
                                         <div class="img" ng-style="{'background-image': 'url(assets/img/'+servicio.imgs[0]+')'}"></div>
                                         <div class="hover-link"><span>VER MÁS</span></div>
                                         <div class="info t-center">
-                                                <h3>{{servicio.title}}</h3>
-                                                <p>{{servicio.desc}}</p>
+                                                <h2>{{servicio.title}}</h2>
+                                                <p class="docs">{{servicio.desc}}</p>
                                         </div>
                                 </div>
                         </div>
@@ -133,8 +133,8 @@
 
         <section class="cirugias padding-bottom-100">
                 <h1>Profesionales</h1>
-                <div class="item-row max-width">
-                        <div class="item-col t-center width-33p">
+                <div class="item-row-relative max-width">
+                        <div class="item-col-relative  padding-20 t-center width-33p">
                                 <div class="img-r100" style="background-image: url(assets/img/doctor-house.jpg)"></div>
                                 <h4 class="margin-bottom-0">Dr. Juan Antonio Treviño Macías</h4>
                                 <b>Director General</b>
@@ -142,7 +142,7 @@
                                         Certificado por el Consejo Mexicano de Cirugía Plástica, Estética y Reconstructiva
                                 </p>
                         </div>
-                        <div class="item-col t-center width-33p">
+                        <div class="item-col-relative padding-20 t-center width-33p">
                                 <div class="img-r100" style="background-image: url(assets/img/doctor-house.jpg)"></div>
                                 <h4 class="margin-bottom-0">Dr. Octavio González Pacheco</h4>
                                 <b>Subdirector Médico</b>
@@ -151,7 +151,7 @@
                                 </p>
                         </div>
                         
-                        <div class="item-col t-center">
+                        <div class="item-col-relative   padding-20 t-center width-33p">
                                 <div class="img-r100" style="background-image: url(assets/img/doctor-house.jpg)"></div>
                                 <h4 class="margin-bottom-0">Dr. Gustavo Trejo Hernández</h4>
                                 <b>Jefe de Anestesiología</b>
@@ -164,18 +164,17 @@
 
         <section class="certi">
                 <div class="b-black padding-top-20">
-                        <!-- <h1>Certificaciones</h1> -->
-                        <div class="item-row">
-                                <div class="item-col">
+                        <div class="item-row-relative max-width">
+                                <div class="item-col-relative width-25p">
                                         <i class="logo-certi" style="background-image: url(assets/img/certi_1.png)"></i>
                                 </div>
-                                <div class="item-col">
+                                <div class="item-col-relative width-25p">
                                         <i class="logo-certi" style="background-image: url(assets/img/certi_2.png)"></i>
                                 </div>
-                                <div class="item-col">
+                                <div class="item-col-relative width-25p">
                                         <i class="logo-certi" style="background-image: url(assets/img/certi_3.png)"></i>
                                 </div>
-                                <div class="item-col">
+                                <div class="item-col-relative width-25p">
                                         <i class="logo-certi" style="background-image: url(assets/img/certi_4.png)"></i>
                                 </div>
                         </div>
@@ -183,17 +182,17 @@
                 </div>
         </section>
 
-        <section class="contacto mapa c-inherit" id="contacto">
+        <section class="contacto mapa padding-bottom-100" id="contacto">
                 <h1 class="c-white">Contacto</h1>
 
-                <div class="item-row">
-                        <div class="item-col width-50p">
+                <div class="item-row-relative">
+                        <div class="item-col-relative width-50p padding-20">
                                         <div class="max-width-350  padding-20 contenido-contacto b-radius-4 t-center">
 
                                                         <h2 class="c-purple"><b>!Agenda tu cita!</b></h2>
                                                         <hr class="b-purple">
                                                         <h3 class="c-purple margin-bottom-0"><b>+52 (55) 6708 7001</b></h3>
-                                                        <span>info@centrodecirugiaplastica.com</span>
+                                                        <span class="fs-16">info@centrodecirugiaplastica.com</span>
                                                         <br>
                                                         <br>
                                         
@@ -205,7 +204,7 @@
                                                         </div>
                                                 </div>
                         </div>
-                        <div class="item-col">
+                        <div class="item-col-relative width-50p padding-20">
                                         <div class="max-width-350  padding-20 contenido-contacto b-radius-4 t-center">
 
                                                         <h2 class="c-purple"><b>¡Visitanos!</b></h2>
@@ -230,45 +229,59 @@
         <footer>
                 <div class="manos max-width">
                         
-                <div class="item-row c-dynamic t-center">
-                        <div class="item-col c-white fs-12">
-                                <div>Dr. Juan Antonio Treviño Macías</div>
-                                <b>Director General</b>
+                        <div class="item-row c-dynamic t-center">
+                                <div class="item-col c-white fs-12">
+                                        <div>Dr. Juan Antonio Treviño Macías</div>
+                                        <b>Director General</b>
 
-                                <br>
-                                <br>
+                                        <br>
+                                        <br>
 
-                                <div class="c-gray">
-                                        Licenciatura como Médico Cirujano y Paterno: 0589999
-                                </div>
-                                <div class="c-gray">
-                                        Especialidad en Cirugía Plástica y Reconstructiva: 0030031
-                                </div>
-                                <div class="c-gray">
-                                        Cedula de especialidad: 5306
-                                </div>
-                                <div class="c-gray">
-                                        Registro cofepris: 000000000
+                                        <div class="c-gray">
+                                                Licenciatura como Médico Cirujano y Paterno: 0589999
+                                        </div>
+                                        <div class="c-gray">
+                                                Especialidad en Cirugía Plástica y Reconstructiva: 0030031
+                                        </div>
+                                        <div class="c-gray">
+                                                Cedula de especialidad: 5306
+                                        </div>
+                                        <div class="c-gray">
+                                                Registro cofepris: 000000000
+                                        </div>
                                 </div>
                         </div>
-                </div>
 
-                <div class="item-row c-dynamic t-center">
-                        <div class="item-col">
-                                <i class="logo-footer-blanco"></i>
+                        <div class="item-row c-dynamic t-center">
+                                <div class="item-col padding-20">
+                                        <i class="logo-footer-blanco"></i>
+                                </div>
                         </div>
-                </div>
-                <div class="item-row c-white fs-10">
-                        <div class="item-col t-right">© Centro de Cirugia Plastica S.A. de C.V.</div>
-                </div>
-                <div class="item-row c-white fs-10">
-                        <div class="item-col width-50"><a href="https://www.facebook.com/ccplasticasc"><i class="fab c-white fa-2x fa-facebook cursor-pointer"></i></a></div>
-                        <div class="item-col width-50"><a href="https://twitter.com/ccplasticasc"><i class="fab c-white fa-2x fa-twitter cursor-pointer"></i></a></div>
-                        <div class="item-col width-50"><a href="https://www.instagram.com/ccplasticasc"><i class="fab c-white fa-2x fa-instagram cursor-pointer"></i></a> </div>
-                        <div class="item-col t-right"> <a href="https://aloux.mx" target="_black">Diseño y Desarrollo por Aloux</a></div>
-                </div>
+                        <div class="item-row-relative c-white fs-10">
+                                <div class="item-col-relative width-50p t-left">
+                                        <a class="padding-20" href="https://www.facebook.com/ccplasticasc"><i class="fab c-white fa-2x fa-facebook cursor-pointer"></i></a>
+                                        <a class="padding-20" href="https://twitter.com/ccplasticasc"><i class="fab c-white fa-2x fa-twitter cursor-pointer"></i></a>
+                                        <a class="padding-20" href="https://www.instagram.com/ccplasticasc"><i class="fab c-white fa-2x fa-instagram cursor-pointer"></i></a> 
+                                </div>
+                                <div class="item-col-relative t-right padding-20 fs-10 width-50p">
+                                        <span class=" c-white">© Centro de Cirugia Plastica S.A. de C.V.</span>
+                                        <br>
+                                        <a href="https://aloux.mx" target="_black">Diseño y Desarrollo por Aloux</a>
+                                </div>
+                        </div>
                 </div>
         </footer>
+
+        <div class="full-screen" ng-class="{'full-active': fullActive}">
+                <div class="card">
+                        <i class="exit fas fa-lg fa-times cursor-pointer" ng-click="min()"></i>
+                        <div class="img" ng-style="{'background-image': 'url(assets/img/'+servicio.imgs[0]+')'}"></div>
+                        <div class="info t-center">
+                                <h3>{{servicio.title}}</h3>
+                                <p>{{servicio.desc}}</p>
+                        </div>
+                </div>
+        </div>
 
 
 </body>

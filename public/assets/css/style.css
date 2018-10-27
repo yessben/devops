@@ -26,28 +26,21 @@ b{
     font-family: 'manrope_bold', Arial;
     font-weight: 400;
 }
+h1,h2,h3,h4{
+    font-family: 'manrope_bold', Arial;
+    text-align: center;
+}
 h1{
     font-size: 48px;
-    text-align: center;
-    font-family: 'manrope_bold', Arial;
 }
 h2{
     font-size: 32px;
-    font-weight: normal;
-    text-align: center;
-
 }
 h3{
-    text-align: center;
     font-size: 22px;
-    font-weight: normal;
-    font-family: 'manrope_regular', Arial;
 }
 h4{
-    text-align: center;
     font-size: 14px;
-    font-weight: normal;
-    font-family: 'manrope_regular', Arial;
 }
 
 
@@ -163,6 +156,12 @@ hr{
 .width-33p{
     width: 33%;
 }
+.width-25p{
+    width: 24%;
+}
+.width-50p{
+    width: 49%;
+}
 section{
 }
 
@@ -183,8 +182,7 @@ section.certi{
     color: rgba(255,255,255,1);
 }
 section.contacto{
-    padding: 20px; 
-    height: 600px;
+    padding: 20px;
 }
 .contenido-contacto{background-color: rgba(255,255,255,.9);}
 .circle-r50{
@@ -239,6 +237,9 @@ section.contacto{
 }
 .fs-12{
     font-size: 12px;
+}
+.fs-16{
+    font-size: 16px;
 }
 .padding-top-20{
     padding-top: 20px;
@@ -302,6 +303,9 @@ section.contacto{
 }
 .card .info p{
     color: rgb(100,100,100);
+}
+
+.card .info p.docs{
     overflow:hidden;
     white-space:nowrap;
     text-overflow: ellipsis;
@@ -333,9 +337,6 @@ section.contacto{
     background-position: center;
     background-size: cover;
     margin: auto;
-}
-.width-50p{
-    width: 50%;
 }
 .width-50{
     width: 50px;
@@ -426,7 +427,6 @@ ui-carousel{
 }
 
 footer{
-    height: 350px;
     background-color: black;
     padding: 50px;
     border-top: 4px dashed rgb(81,18,111);
@@ -451,7 +451,6 @@ footer{
     background-image: url(../img/logo_blanco-white.svg);
     margin: auto;
     background-position: center;
-    margin-right: 0px;
 }
 
 .menu-mobile{
@@ -501,13 +500,14 @@ footer{
     color: rgb(255,255,255);
     display: block;
     padding: 10px 25px;
-    font-size: 14px;
     letter-spacing: 4px;
+    font-size: 30px;
+    text-align: center;
 }
 
 
 .menu-mobile ul li.phone{
-    font-size: 18px;
+    font-size: 32px;
 }
 .menu-mobile ul li a{
     color: rgb(255,255,255);
@@ -563,9 +563,67 @@ footer{
     background-size: cover;
     background-position: center;
 }
+.cursor-pointer{
+    cursor: pointer;
+}
 
-
-
+.full-screen .card{
+    box-shadow: none;
+    cursor: default;
+    border-radius: 0;
+}
+.full-screen .card .img{
+    height: calc(100vh / 2);
+}
+.full-screen .card .info{
+    padding: 0px 20px;
+}
+.full-screen .header-full i:hover{
+    color: rgb(81,18,111);
+}
+.full-screen .header-full{
+    box-shadow: none;
+    height: 80px;
+    text-align: right;
+    padding: 30px;
+    padding-right: 30px;
+    color: rgb(81,18,111);
+}
+.full-screen{
+    position: fixed;
+    width: 400px;
+    height: 350px;
+    background-color: white;
+    z-index: -2;
+    top: 0;
+    visibility: hidden; 
+    left: 50%;
+    right: auto;
+    margin-left: -200px;
+    overflow: hidden;
+    transition: .2s;
+    opacity: 0;
+}
+.full-screen.full-active{
+    opacity: 1;
+    overflow: auto; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 0;
+    width: auto;
+    height: auto;
+    z-index: 22;
+    visibility: visible;
+    transition: .2s;
+}
+.exit{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    color: rgb(81,18,111);
+    text-shadow: 0 0 30px rgba(255,255,255,1);
+}
 @media screen and (max-width: 1000px) {
     .menu-mobile{
         display: block;
@@ -573,11 +631,20 @@ footer{
     .menu-web{
         display: none;
     }
-    .grid-3 {
-        grid-template-columns: auto;
-      }
+    .width-50p, 
+    .width-33p{
+        width: 100%;
+    }
 }
 @media screen and (max-width: 500px) {
+    .fs-16{
+        font-size: 14px;
+    }
+    .logo-certi{
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+    }
     .logo-title{
         display: none;
     }
@@ -594,5 +661,20 @@ footer{
     }
     section.cirugias{
         padding: 0px; 
+    }
+    .t-left, .t-right{
+        text-align: center;
+    }
+    h1{
+        font-size: 32px;
+    }
+    h2{
+        font-size: 22px;
+    }
+    h3{
+        font-size: 14px;
+    }
+    h4{
+        font-size: 10px;
     }
 }

@@ -100,6 +100,16 @@
             $scope.menuShow = false;
         };
 
+        $scope.servicio = {};
+        $scope.fullActive = false;
+        $scope.full = function(obj){
+            $scope.servicio = obj;
+            $scope.fullActive = true;
+        };
+        $scope.min = function(){
+            $scope.fullActive = false;
+        };
+
           $('h1').parallaxContent({
             shift: -15,
             duration: 1
