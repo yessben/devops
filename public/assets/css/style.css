@@ -426,10 +426,10 @@ ui-carousel{
 }
 
 footer{
-    height: 420px;
+    height: 350px;
     background-color: black;
     padding: 50px;
-    border-top: 4px solid rgb(81,18,111);
+    border-top: 4px dashed rgb(81,18,111);
     position: relative;
 }
 .manos{
