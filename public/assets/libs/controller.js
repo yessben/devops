@@ -26,7 +26,7 @@
         $scope.categorias = [
             {key: 'todo',         name: 'Todo', active: true},
             {key: 'rostro',         name: 'Rostro', active: false},
-            {key: 'cuerpo',         name: 'Cuespo', active: false},
+            {key: 'cuerpo',         name: 'Cuerpo', active: false},
             {key: 'piel',           name: 'Piel', active: false },
             {key: 'procedimientos', name: 'Procedimientos', active: false }
         ];
