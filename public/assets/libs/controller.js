@@ -166,11 +166,19 @@
 
         jssor_1_slider_init2 = function() {
 
+            var jssor_1_SlideshowTransitions = [
+                {$Duration:1200,$Opacity:2}
+              ];
             var jssor_1_options = {
-              $AutoPlay: 0,
+              $AutoPlay: 1,
               $Idle: 2000,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
               $SlideEasing: $Jease$.$InOutSine,
-              $DragOrientation: 3,
+            //   $DragOrientation: 3,
               $ArrowNavigatorOptions: {
                 $Class: $JssorArrowNavigator$
               },
