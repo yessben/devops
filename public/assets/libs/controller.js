@@ -20,7 +20,7 @@
         this.slides = [];
         for(var i = 0; i < this.slidesNumber; i++){
             var strName = 's'+(i+3)+'.jpg';
-            this.slides.push( { image: 'url('+this.baseUrl+strName});
+            this.slides.push( { image: this.baseUrl+strName});
         };
       
         $scope.categorias = [
@@ -82,7 +82,15 @@
                 desc: 'Es quizás la más socorrida de las cirugías de embellecimiento, olvidándose muchas veces de su función. En nuestro Centro de Cirugía no la hemos olvidado, realizamos un diagnóstico y tratamiento integral con corrección tanto estética como funcional.',
                 imgs: ['s5.jpg']
             }
-        ]
+        ];
+
+        $scope.equipo = {
+            title: 'Dr. Juan Antonio Treviño Macías',
+            position: 'Director General',
+            desc: 'Especialista en Cirugía plástica. Cédula profesional No.0030031. Certificado por el Consejo Mexicano de Cirugía Plástica, Estética y Reconstructiva. Certificado No.836. Miembro de la Asociación Mexicana de Cirugía Plástica Estética y Reconstructiva (A.M.C.P.E.R.) Miembro del Colegio De Cirujanos Plásticos del Valle De México. Certificado por el Consejo Mexicano de Médicos Bariatras. Master en Cosmiatría.',
+            imgs: ['doctor-house.jpg'],
+            type: 'equipo'
+        };
 
         $scope.search = {};
         $scope.changeFilter = function(list, obj){
@@ -117,6 +125,103 @@
           $('#contentInfo').parallaxContent({
             shift: -15,duration: 2
           });
+
+
+
+          jssor_1_slider_init1 = function() {
+
+            var jssor_1_options = {
+              $AutoPlay: 0,
+              $SlideDuration: 800,
+              $SlideEasing: $Jease$.$OutQuint,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            var MAX_WIDTH = 1500;
+            function ScaleSlider1() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+                if (containerWidth) {
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider1, 5);
+                }
+            }
+
+            ScaleSlider1();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider1);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider1);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider1);
+            /*#endregion responsive code end*/
+        };
+
+
+        jssor_1_slider_init2 = function() {
+
+            var jssor_1_options = {
+              $AutoPlay: 0,
+              $Idle: 2000,
+              $SlideEasing: $Jease$.$InOutSine,
+              $DragOrientation: 3,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_2", jssor_1_options);
+            jssor_1_slider.$Elmt.style.margin = "";
+            var MAX_WIDTH = 10000;
+            var MAX_HEIGHT = 10000;
+            var MAX_BLEEDING = 1;
+
+            function ScaleSlider2() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+                    var originalWidth = jssor_1_slider.$OriginalWidth();
+                    var originalHeight = jssor_1_slider.$OriginalHeight();
+
+                    var containerHeight = containerElement.clientHeight || originalHeight;
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+                    var expectedHeight = Math.min(MAX_HEIGHT || containerHeight, containerHeight);
+                    jssor_1_slider.$ScaleSize(expectedWidth, expectedHeight, MAX_BLEEDING);
+                    jssor_1_slider.$Elmt.style.top = ((containerHeight - expectedHeight) / 2) + "px";
+                    jssor_1_slider.$Elmt.style.left = ((containerWidth - expectedWidth) / 2) + "px";
+                }
+                else {
+                    window.setTimeout(ScaleSlider2, 30);
+                }
+            }
+
+            function OnOrientationChange() {
+                ScaleSlider2();
+                window.setTimeout(ScaleSlider2, 800);
+            }
+
+            ScaleSlider2();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider2);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider2);
+            $Jssor$.$AddEvent(window, "orientationchange", OnOrientationChange);
+        }
+
+        setTimeout(function(){
+            jssor_1_slider_init1();
+            jssor_1_slider_init2();
+        },1000);
 
       });
 })();

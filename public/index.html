@@ -17,6 +17,7 @@
         <script src="assets/libs/TweenLite.min.js"></script>
         <script src="assets/libs/CSSPlugin.min.js"></script>
         <script src="assets/libs/parallax_content.js"></script>
+        <script src="assets/libs/jssor.slider.min.js"></script>
         <script src="assets/libs/controller.js"></script>
 </head>
 <body ng-controller="Ctrl as ctrl">
@@ -53,24 +54,38 @@
         </header>
 
         <section class="home" id="home">
-
-                <ui-carousel 
-                        slides="ctrl.slides" 
-                        on-init="ctrl.onCarouselInit()" 
-                        slides-to-show="1" 
-                        slides-to-scroll="1" 
-                        initial-slide="ctrl.startIndex"
-                        autoplay="true"
-                        autoplay-speed="7000"
-                        speed="800"
-                        dots="true"
-                        fade="true">
-
-                        <carousel-item>
-                                <div class="img-slide" ng-style="{'background-image': item.image}"></div>
-                        </carousel-item>
-
-                </ui-carousel>
+                <div id="jssor_2" style="position:relative;margin:0 auto;top:0px;left:0px;width:1366px;height:768px;overflow:hidden;visibility:hidden;">
+                        <!-- Loading Screen -->
+                        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                                <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" />
+                        </div>
+                        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1366px;height:768px;overflow:hidden;">
+                                
+                        <div ng-repeat="item in ctrl.slides">
+                                        <!-- <div class="img-slide" ng-style="{'background-image': item.image}"> -->
+                                        <img data-u="image" src="{{item.image}}" />
+                                        <!-- <img class="img-slide-item rotate-animate" ng-src="'assets/img/'+item.image" ng-click="full(services[0])"/> -->
+                                </div>
+                        </div>
+                        <div data-u="navigator" class="jssorb064" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                                <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                                        <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                        <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                        </svg>
+                                </div>
+                        </div>
+                                <!-- Arrow Navigator -->
+                        <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                        <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                                </svg>
+                        </div>
+                        <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                        <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                                </svg>
+                        </div>
+                </div>
 
         </section>
         
@@ -119,48 +134,30 @@
                 <h1>Nosotros</h1>
                 <div class="content-info">
                         <p id="contentInfo">
-                                En el año de 1991, el Dr. Juan Antonio Treviño Macías, actual Director General, 
-                                viendo la necesidad de optimizar y ampliar los servicios en las áreas de salud y 
-                                belleza crea el Centro de Cirugía Plástica.
+                                En el año de 1991 el Dr. Juan Antonio Treviño Macías, director general, 
+                                viendo la necesidad de optimizar y ampliar los servicios en las áreas de 
+                                salud y belleza crea el CENTRO DE CIRUGÍA PLÁSTICA S.C.
                                 <br>
                                 <br>
-                                En nuestro Centro, hemos integrado los servicios de cirugía plástica, 
+                                En nuestro centro hemos integrado los servicios de cirugía plástica, 
                                 cosmetología y cosmiatría, logrando de esta manera sortear la creciente 
                                 inflación que han mostrado los servicios hospitalarios en las últimas épocas.
                         </p>
                 </div>
-        </section>
 
-        <section class="cirugias padding-bottom-100">
-                <h1>Profesionales</h1>
-                <div class="item-row-relative max-width">
-                        <div class="item-col-relative  padding-20 t-center width-33p">
+                <div class="item-row max-width">
+                        <div class="item-col  padding-20 t-center">
                                 <div class="img-r100" style="background-image: url(assets/img/doctor-house.jpg)"></div>
                                 <h4 class="margin-bottom-0">Dr. Juan Antonio Treviño Macías</h4>
-                                <b class="c-gray">Director General</b>
-                                <p class="c-gray">
-                                        Certificado por el Consejo Mexicano de Cirugía Plástica, Estética y Reconstructiva
-                                </p>
-                        </div>
-                        <div class="item-col-relative padding-20 t-center width-33p">
-                                <div class="img-r100" style="background-image: url(assets/img/doctor-house.jpg)"></div>
-                                <h4 class="margin-bottom-0">Dr. Octavio González Pacheco</h4>
-                                <b class="c-gray">Subdirector Médico</b>
-                                <p class="c-gray">
-                                        Médico Cirujano Master en Cosmiatría
-                                </p>
-                        </div>
-                        
-                        <div class="item-col-relative   padding-20 t-center width-33p">
-                                <div class="img-r100" style="background-image: url(assets/img/doctor-house.jpg)"></div>
-                                <h4 class="margin-bottom-0">Dr. Gustavo Trejo Hernández</h4>
-                                <b class="c-gray">Jefe de Anestesiología</b>
-                                <p class="c-gray">
-                                        Certificado por el Consejo Mexicano de Anestesiología
-                                </p>
+                                <b class="c-white">Director General</b>
+                                <br><br>
+                                <span class="cursor-pointer" ng-click="full(equipo)">VER MÁS</span>
                         </div>
                 </div>
         </section>
+
+                
+                
 
         <section class="certi">
                 <div class="b-black padding-top-20">
@@ -275,13 +272,125 @@
         </footer>
 
         <div class="full-screen" ng-class="{'full-active': fullActive}">
-                <div class="card">
+                <div class="card" ng-show="!servicio.type">
                         <i class="exit fas fa-lg fa-times cursor-pointer" ng-click="min()"></i>
                         <div class="img" ng-style="{'background-image': 'url(assets/img/'+servicio.imgs[0]+')'}"></div>
                         <div class="info t-center">
                                 <h2>{{servicio.title}}</h2>
                                 <p>{{servicio.desc}}</p>
                         </div>
+                </div>
+                <div class="card" ng-show="servicio.type === 'equipo'">
+                        <i class="exit fas fa-lg fa-times cursor-pointer" ng-click="min()"></i>
+                        <div class="img" ng-style="{'background-image': 'url(assets/img/'+servicio.imgs[0]+')'}"></div>
+                        <div class="info t-center">
+                                <h2>{{servicio.title}}</h2>
+                                <h3>{{servicio.position}}</h3>
+                                <p>{{servicio.desc}}</p>
+                        </div>
+                        <br>
+                        <br>
+                        <h3>Certificados</h3>
+
+                        <div style="background-color: #e2e2e2">
+                                <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:640px;overflow:hidden;visibility:hidden;">
+                                        <!-- Loading Screen -->
+                                        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                                            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;"/>
+                                        </div>
+                                        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:640px;overflow:hidden;">
+                                            <div>
+                                                <div style="background-color:#e2e2e2;  height: 640px;">
+                                                        <img class="img-slide-item rotate-animate" src="assets/img/cd1.png" ng-click="full(services[0])"/>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div style="background-color:#e2e2e2;  height: 640px;">
+                                                        <img class="img-slide-item rotate-animate" src="assets/img/cd2.png"  ng-click="full(services[1])"//>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div style="background-color:#e2e2e2;  height: 640px;">
+                                                <img class="img-slide-item rotate-animate" src="assets/img/cd3.png"  ng-click="full(services[2])"//>
+                                                </div>
+                                        </div>
+                                        </div>
+                                        <div data-u="arrowleft" class="jssora051" style="width:65px;height:65px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                                            <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                                            </svg>
+                                        </div>
+                                        <div data-u="arrowright" class="jssora051" style="width:65px;height:65px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                                            <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                                            </svg>
+                                        </div>
+                                </div>
+                        </div>
+                        <br>
+                        <br>
+                            <h3>Equipo</h3>
+                            <div class="item-row">
+                        <div class="item-col padding-20 t-center width-25p align-top">
+
+                                <div class="card min-heigth-400">
+                                        <div class="info-middle" >
+                                                <h4>Dra. Irma Yolanda Bernal Mariscal.</h4>
+                                                <p class="docs">SUBDIRECTOR MÉDICO</p>
+                                                <span class="fs-12">
+                                                        Especialista en Cirugía plástica. Cédula profesional No.AESSA-22797.
+                                                        Certificada por el Consejo Mexicano de Cirugía Plástica, Estética y Reconstructiva. Certificado No.1049.
+                                                        Miembro de la Asociación Mexicana de Cirugía Plástica Estética y Reconstructiva.
+                                                        Miembro del Colegio De Cirujanos Plásticos Del Valle De México.
+                                                        Miembro de la I.S.A.P.S. (International Society Of Plastic Surgery).
+                                                </span>
+                                        </div>
+                                </div>
+
+                        </div>
+                        
+                        <div class="item-col   padding-20 t-center width-25p align-top">
+                                <div class="card min-heigth-400" ng-click="full(servicio)">
+                                        <div class="info-middle" >
+                                                <h4>Dr. Gustavo Trejo Hernández.</h4>
+                                                <p class="docs">JEFE DE ANESTESIOLOGÍA</p>
+                                                <span class="fs-12">
+                                                        Cédula profesional médico general No.993147.
+                                                        Cédula profesional de Anestesiología. No.AECEM16952.
+                                                        Certificado por el Consejo Nacional de Certificación en Anestesiología. Certificado No.2758.
+                                                </span>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="item-col   padding-20 t-center width-25p align-top">
+                                <div class="card min-heigth-400" ng-click="full(servicio)">
+                                        <div class="info-middle" >
+                                                <h4>Dr. Alfredo Bobadilla Aguirre.</h4>
+                                                <p class="docs">SMEDICINA INTERNA Y CARDIOLOGÍA</p>
+                                                <span class="fs-12">
+                                                        Cardiología. Cédula profesional No. AECEM32278.
+                                                        Cardiología Pediátrica (Cédula profesional###).
+                                                        Certificado por los Consejos Mexicanos de Cardiología y Cardiología Pediátrica.
+                                                </span>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="item-col   padding-20 t-center width-25p align-top">
+                                <div class="card min-heigth-400" ng-click="full(servicio)">
+                                        <div class="info-middle" >
+                                                <h4>Dr. Juan Antonio Treviño Macías.</h4>
+                                                <p class="docs">SERVICIO DE COSMIATRÍA Y REHABILITACIÓN</p>
+                                                <span class="fs-12">
+                                                        Cosmiatra Carla Alejandra Treviño Villarreal.
+                                                        Quiropráctico María Alonso Díaz.
+                                                </span>
+                                        </div>
+                                </div>
+                        </div>
+                </div> 
+                        
                 </div>
         </div>
 
