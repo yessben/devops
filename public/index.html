@@ -6,17 +6,22 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> yessben </title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="parallax.js"></script>
 </head>
 <body>
 
 	<section>
 		<div class="wrapper">
-			<h1>
+			<h1 id="home">
 				HOLA BIENVENIDOS
 			</h1>
 		</div>
 			
 	</section>
+	<script>
+		var scene = document.getElementById('home');
+		var panrallaxInstance = new parallax(scene);
+	</script>
 
 
 
